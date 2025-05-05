@@ -1,0 +1,72 @@
+﻿CREATE TABLE Caja (
+    CajaID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Apertura REAL NOT NULL,
+    Cierre REAL,
+    Fecha TEXT NOT NULL
+);
+CREATE TABLE Productos (
+    ProductoID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Producto TEXT NOT NULL,
+    Precio REAL NOT NULL
+);
+CREATE TABLE Ventas (
+    HistorialID INTEGER PRIMARY KEY AUTOINCREMENT,
+    CajaID INTEGER NOT NULL,
+    ProductoID INTEGER NOT NULL,
+    Fecha TEXT NOT NULL,
+    Total REAL NOT NULL,
+    FormaPago TEXT NOT NULL,
+    FOREIGN KEY (CajaID) REFERENCES Caja(CajaID),
+    FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID)
+);
+CREATE TABLE Movimientos (
+    MovimientoID INTEGER PRIMARY KEY AUTOINCREMENT,
+    CajaID INTEGER NOT NULL,
+    Movimiento TEXT NOT NULL,
+    Fecha TEXT NOT NULL,
+    Accion TEXT NOT NULL CHECK (Accion IN ('Ingreso', 'Egreso')),
+    Forma TEXT NOT NULL,
+    FOREIGN KEY (CajaID) REFERENCES Caja(CajaID)
+);
+CREATE INDEX idx_ventas_fecha ON Ventas(Fecha);
+CREATE INDEX idx_ventas_cajaid ON Ventas(CajaID);
+CREATE INDEX idx_movimientos_fecha ON Movimientos(Fecha);
+CREATE TRIGGER set_total_venta
+AFTER INSERT ON Ventas
+FOR EACH ROW
+BEGIN
+    UPDATE Ventas
+    SET Total = (SELECT Precio FROM Productos WHERE ProductoID = NEW.ProductoID)
+    WHERE HistorialID = NEW.HistorialID;
+END;
+
+CREATE TRIGGER log_movimiento_venta
+AFTER INSERT ON Ventas
+FOR EACH ROW
+BEGIN
+    INSERT INTO Movimientos (CajaID, Movimiento, Fecha, Accion, Forma)
+    VALUES (NEW.CajaID, 'Venta ProductoID ' || NEW.ProductoID, NEW.Fecha, 'Ingreso', NEW.FormaPago);
+END;
+CREATE VIEW Vista_VentasPorCaja AS
+SELECT 
+    V.CajaID,
+    C.Fecha AS FechaCaja,
+    V.Fecha AS FechaVenta,
+    P.Producto,
+    P.Precio,
+    V.Total,
+    V.FormaPago
+FROM Ventas V
+JOIN Productos P ON V.ProductoID = P.ProductoID
+JOIN Caja C ON V.CajaID = C.CajaID;
+CREATE VIEW Vista_ResumenCaja AS
+SELECT 
+    C.CajaID,
+    C.Fecha,
+    SUM(V.Total) AS TotalVentas,
+    (SELECT SUM(Monto) FROM Movimientos WHERE CajaID = C.CajaID AND Accion = 'Ingreso') AS TotalIngresos,
+    (SELECT SUM(Monto) FROM Movimientos WHERE CajaID = C.CajaID AND Accion = 'Egreso') AS TotalEgresos
+FROM Caja C
+LEFT JOIN Ventas V ON C.CajaID = V.CajaID
+GROUP BY C.CajaID;
+ALTER TABLE Movimientos ADD COLUMN Monto REAL;
