@@ -11,12 +11,14 @@ namespace AplicacionCarroComidas.Funcion.FormVender {
     public class FuncionEditar {
 
         public void CargarTextBox(ReaLTaiizor.Controls.HopeComboBox comboBox) {
+
             comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox.Items.Insert(0, "Seleccionar");
             comboBox.SelectedIndex = 0;
-            foreach (var dato in LogicaProducto.Instancia.Mostrar()) {
+
+            foreach (var dato in LogicaComida.Instancia.MostrarComida()) {
                 int i = 0;
-                comboBox.Items.Insert(i, dato.Nombre.ToString());
+                comboBox.Items.Insert(i, dato.NombreComida.ToString());
             }
         }
 
@@ -34,15 +36,16 @@ namespace AplicacionCarroComidas.Funcion.FormVender {
 
         public bool Editar(ReaLTaiizor.Controls.HopeComboBox combobox, ReaLTaiizor.Controls.HopeTextBox txtbox) {
             try {
-                foreach (var dato in LogicaProducto.Instancia.Mostrar()) {
-                    if (combobox.Text == dato.Nombre) {
-                        Producto prod = new Producto();
-                        prod.IdProducto = dato.IdProducto;
-                        prod.Nombre = combobox.Text;
-                        prod.Precio = Convert.ToDouble(txtbox.Text);
-                        
-        
-                        LogicaProducto.Instancia.Editar(prod);
+                foreach (var dato in LogicaComida.Instancia.MostrarComida()) {
+                    if (combobox.Text == dato.NombreComida) {
+
+                        Comida comida = new Comida();
+                        comida.ComidaID = dato.ComidaID;
+                        comida.NombreComida = combobox.Text;
+                        comida.Precio = Convert.ToDecimal(txtbox.Text);
+
+
+                        LogicaComida.Instancia.EditarComida(comida);
                     }
                 }
                 return true;

@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AplicacionCarroComidas.Private.DataBase.Model {
-    public class Producto {
-        public int IdProducto { get; set; }
-        public string Nombre { get; set; }
-        public double Precio { get; set; }
+    public class Comida {
+        public int ComidaID { get; set; }
+        public string NombreComida { get; set; }
+        public decimal Precio { get; set; }
     }
 
 }

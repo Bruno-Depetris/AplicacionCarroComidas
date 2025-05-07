@@ -95,14 +95,19 @@
     <Compile Include="Funcion\FormVender\FuncionEditar.cs" />
     <Compile Include="Funcion\FormVender\FuncionVender.cs" />
     <Compile Include="Private\DataBase\Conectar.cs" />
-    <Compile Include="Private\DataBase\Logic\DetalleVentaLogica.cs" />
+    <Compile Include="Private\DataBase\Logic\LogicaApertura.cs" />
     <Compile Include="Private\DataBase\Logic\LogicaCaja.cs" />
-    <Compile Include="Private\DataBase\Logic\LogicaProducto.cs" />
-    <Compile Include="Private\DataBase\Logic\LogicaVenta.cs" />
+    <Compile Include="Private\DataBase\Logic\LogicaCierre.cs" />
+    <Compile Include="Private\DataBase\Logic\LogicaComida.cs" />
+    <Compile Include="Private\DataBase\Logic\LogicaDetalleVenta.cs" />
+    <Compile Include="Private\DataBase\Logic\LogicaMovimientosCaja.cs" />
+    <Compile Include="Private\DataBase\Model\Apertura.cs" />
     <Compile Include="Private\DataBase\Model\Caja.cs" />
+    <Compile Include="Private\DataBase\Model\Cierre.cs" />
+    <Compile Include="Private\DataBase\Model\Comida.cs" />
     <Compile Include="Private\DataBase\Model\DetalleVenta.cs" />
-    <Compile Include="Private\DataBase\Model\Producto.cs" />
-    <Compile Include="Private\DataBase\Model\Venta.cs" />
+    <Compile Include="Private\DataBase\Model\MovimientoCaja.cs" />
+    <Compile Include="Private\DataBase\Model\ResumenCaja.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FormCaja\Caja.resx">
@@ -136,7 +141,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="AplicacionCarroComidasRepas.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

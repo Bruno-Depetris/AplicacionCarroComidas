@@ -7,10 +7,12 @@ using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AplicacionCarroComidas.Funcion.FormVender;
 using AplicacionCarroComidas.Private.DataBase.Logic;
+using AplicacionCarroComidas.Private.DataBase.Model;
 namespace AplicacionCarroComidas.Forms.Vender {
     public partial class Vender : Form {
         private FuncionVender funcionVender; // Add an instance of FuncionVender  
@@ -45,7 +47,7 @@ namespace AplicacionCarroComidas.Forms.Vender {
 
         }
         public void CargarLabel() {
-            var productos = LogicaProducto.Instancia.Mostrar().ToList();
+            var productos = LogicaComida.Instancia.MostrarComida().ToList();
 
             if (productos.Count >= 7) {
                 label_PrecioGaseosa.Text = productos[0].Precio.ToString("0.00");
@@ -58,6 +60,9 @@ namespace AplicacionCarroComidas.Forms.Vender {
             } else {
                 MessageBox.Show("Faltan productos en la base de datos");
             }
+
+
+
         }
         
 
@@ -148,10 +153,24 @@ namespace AplicacionCarroComidas.Forms.Vender {
                 MessageBox.Show("No hay registros para borrar.");
             }
         }
-
         private void parrotButton_Ventas_Click(object sender, EventArgs e) {
             CargarVenta _CargarVenta = new CargarVenta(this);
             _CargarVenta.Total = Convert.ToDouble(label_TotalDetalle.Text);
+            string productosConcatenados = "";
+
+            foreach (DataGridViewRow fila in poisonDataGridView_DetalleVenta.Rows) {
+                if (fila.Cells["Column_Producto"].Value != null) {
+                    productosConcatenados += fila.Cells["Column_Producto"].Value.ToString() + " - ";
+                }
+            }
+
+            // Eliminar el último guión si existe
+            if (productosConcatenados.EndsWith(" - ")) {
+                productosConcatenados = productosConcatenados.Substring(0, productosConcatenados.Length - 3);
+            }
+
+            _CargarVenta.Productos = productosConcatenados;
+
             _CargarVenta.Show();
         }
         public void label_TotalDetalle_Click(object sender, EventArgs e) {

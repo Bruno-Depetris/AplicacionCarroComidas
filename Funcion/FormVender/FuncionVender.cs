@@ -13,14 +13,15 @@ namespace AplicacionCarroComidas.Funcion.FormVender {
     public class FuncionVender {
         int ProductoID;
         string ProductoNombre;
-        double Precio;
+        decimal Precio;
 
 
         public bool CargarDetalle(int id, ReaLTaiizor.Controls.PoisonDataGridView poisonDataGridView_DetalleVenta) {
-            foreach (var dato in LogicaProducto.Instancia.Mostrar()) {
-                if (id == dato.IdProducto) {
-                    ProductoID = dato.IdProducto;
-                    ProductoNombre = dato.Nombre;
+
+            foreach (var dato in LogicaComida.Instancia.MostrarComida()) {
+                if (id == dato.ComidaID) {
+                    ProductoID = dato.ComidaID;
+                    ProductoNombre = dato.NombreComida;
                     Precio = dato.Precio;
 
                     // Agregar al DataGridView sin borrar
@@ -33,13 +34,12 @@ namespace AplicacionCarroComidas.Funcion.FormVender {
 
 
         public void CargarDataGreed(ReaLTaiizor.Controls.PoisonDataGridView dataGreed) {
-            dataGreed.Rows.Add (ProductoID, ProductoNombre, Precio);
+            dataGreed.Rows.Add(ProductoID, ProductoNombre, Precio);
         }
 
-        
+
     }
 
 
 
 }
-

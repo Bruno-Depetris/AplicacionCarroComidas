@@ -75,6 +75,7 @@
             this.materialSwitch_Cobrado.Text = "Marcar Como Cobrado";
             this.materialSwitch_Cobrado.UseAccentColor = false;
             this.materialSwitch_Cobrado.UseVisualStyleBackColor = true;
+            this.materialSwitch_Cobrado.CheckedChanged += new System.EventHandler(this.materialSwitch_Cobrado_CheckedChanged);
             // 
             // parrotButton_Volver
             // 

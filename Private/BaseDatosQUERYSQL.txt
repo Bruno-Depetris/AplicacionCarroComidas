@@ -1,55 +1,115 @@
-﻿CREATE TABLE Caja (
-    id_caja INTEGER PRIMARY KEY AUTOINCREMENT,
-    fecha_apertura DATETIME NOT NULL,
-    hora_cierre DATETIME,
-    cambio_inicial REAL NOT NULL,
-    cambio_final REAL,
-    estado TEXT CHECK(estado IN ('ABIERTA', 'CERRADA')) NOT NULL
+﻿-- Tabla de Aperturas
+CREATE TABLE Aperturas (
+    AperturaID INTEGER PRIMARY KEY AUTOINCREMENT,
+    MontoInicio REAL NOT NULL,
+    Fecha TEXT NOT NULL,
+    Hora TEXT NOT NULL
 );
-CREATE TABLE Producto (
-    id_producto INTEGER PRIMARY KEY AUTOINCREMENT,
-    nombre TEXT NOT NULL,
-    precio REAL NOT NULL
+
+-- Tabla de Cierres
+CREATE TABLE Cierres (
+    CierreID INTEGER PRIMARY KEY AUTOINCREMENT,
+    MontoFinal REAL NOT NULL,
+    Fecha TEXT NOT NULL,
+    Hora TEXT NOT NULL
 );
-CREATE TABLE Venta (
-    id_venta INTEGER PRIMARY KEY AUTOINCREMENT,
-    fecha DATETIME NOT NULL,
-    total REAL NOT NULL,
-    estado_cobro TEXT CHECK(estado_cobro IN ('PENDIENTE', 'COBRADO')) NOT NULL,
-    metodo_pago TEXT CHECK(metodo_pago IN ('EFECTIVO', 'TRANSFERENCIA', 'DEBITO', '')) NOT NULL DEFAULT '',
-    id_caja INTEGER NOT NULL,
-    FOREIGN KEY (id_caja) REFERENCES Caja(id_caja)
+
+-- Tabla de Cajas
+CREATE TABLE Cajas (
+    CajaID INTEGER PRIMARY KEY AUTOINCREMENT,
+    AperturaID INTEGER NOT NULL,
+    CierreID INTEGER,
+    FOREIGN KEY (AperturaID) REFERENCES Aperturas(AperturaID),
+    FOREIGN KEY (CierreID) REFERENCES Cierres(CierreID)
 );
-CREATE TABLE DetalleVenta (
-    id_detalle INTEGER PRIMARY KEY AUTOINCREMENT,
-    id_venta INTEGER NOT NULL,
-    Detalle INTEGER NOT NULL, (todos los productos que compro)
-    cantidad INTEGER NOT NULL,
-    subtotal REAL NOT NULL,
-    FOREIGN KEY (id_venta) REFERENCES Venta(id_venta),
-    FOREIGN KEY (id_producto) REFERENCES Producto(id_producto)
+
+-- Tabla de Comidas
+CREATE TABLE Comidas (
+    ComidaID INTEGER PRIMARY KEY AUTOINCREMENT,
+    NombreComida TEXT NOT NULL,
+    Precio REAL NOT NULL
 );
-CREATE TABLE Movimiento (
-    id_movimiento INTEGER PRIMARY KEY AUTOINCREMENT,
-    fecha DATETIME NOT NULL,
-    tipo TEXT CHECK(tipo IN ('INGRESO', 'RETIRO')) NOT NULL,
-    motivo TEXT,
-    monto REAL NOT NULL,
-    metodo TEXT CHECK(metodo IN ('EFECTIVO', 'TRANSFERENCIA', 'DEBITO')) NOT NULL,
-    id_caja INTEGER NOT NULL,
-    FOREIGN KEY (id_caja) REFERENCES Caja(id_caja)
+
+-- Tabla de Detalles de Ventas
+CREATE TABLE DetallesVentas (
+    DetalleVentaID INTEGER PRIMARY KEY AUTOINCREMENT,
+    MedioPago TEXT NOT NULL,
+    Productos TEXT NOT NULL, -- Guardado como string concatenado
+    Total REAL NOT NULL,
+    AperturaID INTEGER NOT NULL,
+    FOREIGN KEY (AperturaID) REFERENCES Aperturas(AperturaID)
 );
-CREATE VIEW HistorialVentas AS
-SELECT 
-    V.id_venta,
-    V.fecha,
-    GROUP_CONCAT(P.nombre || ' x' || DV.cantidad, ', ') AS productos,
-    V.total,
-    V.estado_cobro,
-    V.metodo_pago
-FROM Venta V
-JOIN DetalleVenta DV ON V.id_venta = DV.id_venta
-JOIN Producto P ON DV.id_producto = P.id_producto
-GROUP BY V.id_venta;
+
+-- Tabla de Movimientos de Caja
+CREATE TABLE MovimientosCaja (
+    MovimientosCajaID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Motivo TEXT NOT NULL,
+    Tipo TEXT CHECK (Tipo IN ('Ingreso', 'Egreso')) NOT NULL,
+    Monto REAL NOT NULL,
+    Metodo TEXT NOT NULL, -- efectivo, transferencia, débito, etc.
+    AperturaID INTEGER NOT NULL,
+    FOREIGN KEY (AperturaID) REFERENCES Aperturas(AperturaID)
+);
+-- Índices útiles
+CREATE INDEX idx_aperturas_fecha ON Aperturas(Fecha);
+CREATE INDEX idx_cierres_fecha ON Cierres(Fecha);
+CREATE INDEX idx_detalles_apertura ON DetallesVentas(AperturaID);
+CREATE INDEX idx_movimientos_apertura ON MovimientosCaja(AperturaID);
+
+CREATE VIEW VistaResumenCaja AS
+SELECT
+    a.AperturaID,
+    a.MontoInicio,
+    a.Fecha,
+    a.Hora,
+    IFNULL(c.MontoFinal, 0) AS MontoFinal,
+    IFNULL(SUM(dv.Total), 0) AS TotalVentas,
+    IFNULL(SUM(CASE WHEN mc.Tipo = 'Ingreso' THEN mc.Monto ELSE 0 END), 0) AS TotalIngresos,
+    IFNULL(SUM(CASE WHEN mc.Tipo = 'Egreso' THEN mc.Monto ELSE 0 END), 0) AS TotalEgresos,
+    (a.MontoInicio + 
+     IFNULL(SUM(dv.Total), 0) + 
+     IFNULL(SUM(CASE WHEN mc.Tipo = 'Ingreso' THEN mc.Monto ELSE 0 END), 0) - 
+     IFNULL(SUM(CASE WHEN mc.Tipo = 'Egreso' THEN mc.Monto ELSE 0 END), 0)) AS SaldoEstimado
+FROM Aperturas a
+LEFT JOIN Cierres c ON a.AperturaID = c.CierreID
+LEFT JOIN DetallesVentas dv ON a.AperturaID = dv.AperturaID
+LEFT JOIN MovimientosCaja mc ON a.AperturaID = mc.AperturaID
+GROUP BY a.AperturaID;
+CREATE VIEW VistaVentasDetalladas AS
+SELECT
+    dv.DetalleVentaID,
+    dv.MedioPago,
+    dv.Productos,
+    dv.Total,
+    dv.AperturaID,
+    a.Fecha,
+    a.Hora
+FROM DetallesVentas dv
+JOIN Aperturas a ON dv.AperturaID = a.AperturaID;
+CREATE TRIGGER trg_CierreCaja_InsertarMovimiento
+AFTER INSERT ON Cierres
+BEGIN
+    INSERT INTO MovimientosCaja (Motivo, Tipo, Monto, Metodo, AperturaID)
+    VALUES (
+        'Cierre de caja',
+        'Egreso',
+        NEW.MontoFinal,
+        'efectivo',
+        NEW.CierreID
+    );
+END;
+CREATE TRIGGER trg_ValidarAperturaUnica
+BEFORE INSERT ON Aperturas
+BEGIN
+    SELECT
+        RAISE(ABORT, 'Ya existe una apertura sin cierre.')
+    WHERE EXISTS (
+        SELECT 1
+        FROM Cajas c
+        LEFT JOIN Cierres ci ON c.CierreID = ci.CierreID
+        WHERE ci.CierreID IS NULL
+    );
+END;
+
 
 AplicacionCarroComidasRepas
