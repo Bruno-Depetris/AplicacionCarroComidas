@@ -17,7 +17,6 @@ namespace AplicacionCarroComidas.Funcion.FormVender {
 
 
         public bool CargarDetalle(int id, ReaLTaiizor.Controls.PoisonDataGridView poisonDataGridView_DetalleVenta) {
-
             foreach (var dato in LogicaComida.Instancia.MostrarComida()) {
                 if (id == dato.ComidaID) {
                     ProductoID = dato.ComidaID;
@@ -31,8 +30,6 @@ namespace AplicacionCarroComidas.Funcion.FormVender {
             }
             return false;
         }
-
-
         public void CargarDataGreed(ReaLTaiizor.Controls.PoisonDataGridView dataGreed) {
             dataGreed.Rows.Add(ProductoID, ProductoNombre, Precio);
         }

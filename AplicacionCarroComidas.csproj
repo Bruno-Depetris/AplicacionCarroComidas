@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -73,6 +88,12 @@
     <Compile Include="Forms\FormPrincipal\FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Notificacion\Mensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Notificacion\Mensaje.Designer.cs">
+      <DependentUpon>Mensaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Vender\CargarVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +129,7 @@
     <Compile Include="Private\DataBase\Model\DetalleVenta.cs" />
     <Compile Include="Private\DataBase\Model\MovimientoCaja.cs" />
     <Compile Include="Private\DataBase\Model\ResumenCaja.cs" />
+    <Compile Include="Private\RawPrinterHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FormCaja\Caja.resx">
@@ -121,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPrincipal\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Notificacion\Mensaje.resx">
+      <DependentUpon>Mensaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Vender\CargarVenta.resx">
       <DependentUpon>CargarVenta.cs</DependentUpon>
@@ -166,8 +191,12 @@
     <PackageReference Include="System.Data.SQLite">
       <Version>1.0.119</Version>
     </PackageReference>
+    <PackageReference Include="Tools.InnoSetup">
+      <Version>6.4.3</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Drivers\XPrinter Driver Setup V7.77.exe" />
     <Content Include="Predits.ico" />
     <Content Include="Private\BaseDatosQUERYSQL.txt" />
     <Content Include="Public\Icon\repas sin fondo.png">
@@ -390,7 +419,18 @@
   <ItemGroup>
     <Folder Include="Caja\" />
     <Folder Include="Forms\DashBoard\" />
-    <Folder Include="Public\Vender\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

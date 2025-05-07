@@ -28,8 +28,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_ContenedorFormularios = new System.Windows.Forms.Panel();
             this.panel_ContenedorLateral = new System.Windows.Forms.Panel();
-            this.parrotButton_Historial = new ReaLTaiizor.Controls.ParrotButton();
             this.parrotButton_Movimiento = new ReaLTaiizor.Controls.ParrotButton();
+            this.parrotButton_Historial = new ReaLTaiizor.Controls.ParrotButton();
             this.parrotButton_Caja = new ReaLTaiizor.Controls.ParrotButton();
             this.parrotButton_Ventas = new ReaLTaiizor.Controls.ParrotButton();
             this.panel_Senializador = new ReaLTaiizor.Controls.Panel();
@@ -54,7 +54,7 @@
             this.nightForm1.MinimumSize = new System.Drawing.Size(100, 42);
             this.nightForm1.Name = "nightForm1";
             this.nightForm1.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
-            this.nightForm1.Size = new System.Drawing.Size(1029, 550);
+            this.nightForm1.Size = new System.Drawing.Size(1200, 700);
             this.nightForm1.TabIndex = 0;
             this.nightForm1.Text = "Repas";
             this.nightForm1.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
@@ -66,7 +66,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(200, 31);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 519);
+            this.panel1.Size = new System.Drawing.Size(1, 669);
             this.panel1.TabIndex = 3;
             // 
             // panel_ContenedorFormularios
@@ -75,7 +75,7 @@
             this.panel_ContenedorFormularios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_ContenedorFormularios.Location = new System.Drawing.Point(200, 31);
             this.panel_ContenedorFormularios.Name = "panel_ContenedorFormularios";
-            this.panel_ContenedorFormularios.Size = new System.Drawing.Size(829, 519);
+            this.panel_ContenedorFormularios.Size = new System.Drawing.Size(1000, 669);
             this.panel_ContenedorFormularios.TabIndex = 2;
             // 
             // panel_ContenedorLateral
@@ -89,33 +89,8 @@
             this.panel_ContenedorLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_ContenedorLateral.Location = new System.Drawing.Point(0, 31);
             this.panel_ContenedorLateral.Name = "panel_ContenedorLateral";
-            this.panel_ContenedorLateral.Size = new System.Drawing.Size(200, 519);
+            this.panel_ContenedorLateral.Size = new System.Drawing.Size(200, 669);
             this.panel_ContenedorLateral.TabIndex = 1;
-            // 
-            // parrotButton_Historial
-            // 
-            this.parrotButton_Historial.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.parrotButton_Historial.ButtonImage = ((System.Drawing.Image)(resources.GetObject("parrotButton_Historial.ButtonImage")));
-            this.parrotButton_Historial.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
-            this.parrotButton_Historial.ButtonText = "Historial";
-            this.parrotButton_Historial.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.parrotButton_Historial.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(151)))), ((int)(((byte)(60)))));
-            this.parrotButton_Historial.CornerRadius = 5;
-            this.parrotButton_Historial.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.parrotButton_Historial.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.parrotButton_Historial.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.parrotButton_Historial.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.parrotButton_Historial.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
-            this.parrotButton_Historial.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            this.parrotButton_Historial.Location = new System.Drawing.Point(5, 212);
-            this.parrotButton_Historial.Name = "parrotButton_Historial";
-            this.parrotButton_Historial.Size = new System.Drawing.Size(195, 50);
-            this.parrotButton_Historial.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.parrotButton_Historial.TabIndex = 6;
-            this.parrotButton_Historial.TextColor = System.Drawing.Color.Black;
-            this.parrotButton_Historial.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotButton_Historial.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.parrotButton_Historial.Click += new System.EventHandler(this.parrotButton_Historial_Click);
             // 
             // parrotButton_Movimiento
             // 
@@ -141,6 +116,31 @@
             this.parrotButton_Movimiento.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.parrotButton_Movimiento.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.parrotButton_Movimiento.Click += new System.EventHandler(this.parrotButton_Movimiento_Click);
+            // 
+            // parrotButton_Historial
+            // 
+            this.parrotButton_Historial.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.parrotButton_Historial.ButtonImage = ((System.Drawing.Image)(resources.GetObject("parrotButton_Historial.ButtonImage")));
+            this.parrotButton_Historial.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
+            this.parrotButton_Historial.ButtonText = "Historial";
+            this.parrotButton_Historial.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.parrotButton_Historial.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(151)))), ((int)(((byte)(60)))));
+            this.parrotButton_Historial.CornerRadius = 5;
+            this.parrotButton_Historial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.parrotButton_Historial.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.parrotButton_Historial.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.parrotButton_Historial.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.parrotButton_Historial.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
+            this.parrotButton_Historial.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
+            this.parrotButton_Historial.Location = new System.Drawing.Point(5, 212);
+            this.parrotButton_Historial.Name = "parrotButton_Historial";
+            this.parrotButton_Historial.Size = new System.Drawing.Size(195, 50);
+            this.parrotButton_Historial.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.parrotButton_Historial.TabIndex = 6;
+            this.parrotButton_Historial.TextColor = System.Drawing.Color.Black;
+            this.parrotButton_Historial.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotButton_Historial.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.parrotButton_Historial.Click += new System.EventHandler(this.parrotButton_Historial_Click);
             // 
             // parrotButton_Caja
             // 
@@ -241,7 +241,7 @@
             this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
             this.nightControlBox1.EnableMinimizeButton = true;
             this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(890, 0);
+            this.nightControlBox1.Location = new System.Drawing.Point(1061, 0);
             this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -254,11 +254,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1029, 550);
+            this.ClientSize = new System.Drawing.Size(1200, 700);
             this.Controls.Add(this.nightForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1600, 900);
+            this.MaximumSize = new System.Drawing.Size(1600, 700);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Repas Aplicación";

@@ -21,7 +21,6 @@ namespace AplicacionCarroComidas.Funcion.FormVender {
                 comboBox.Items.Insert(i, dato.NombreComida.ToString());
             }
         }
-
         public bool Validacion(ReaLTaiizor.Controls.HopeComboBox hopeComboBox_Productos, ReaLTaiizor.Controls.HopeTextBox hopeTextBox_NuevoPrecio) {
             if (string.IsNullOrEmpty(hopeComboBox_Productos.Text) || hopeComboBox_Productos.Text == "Seleccionar") {
                 MessageBox.Show("Seleccione un producto");
@@ -33,7 +32,6 @@ namespace AplicacionCarroComidas.Funcion.FormVender {
             }
             return true;
         }
-
         public bool Editar(ReaLTaiizor.Controls.HopeComboBox combobox, ReaLTaiizor.Controls.HopeTextBox txtbox) {
             try {
                 foreach (var dato in LogicaComida.Instancia.MostrarComida()) {

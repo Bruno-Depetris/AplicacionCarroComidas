@@ -1,4 +1,5 @@
-﻿using AplicacionCarroComidas.Private.DataBase.Logic;
+﻿using AplicacionCarroComidas.Forms.Notificacion;
+using AplicacionCarroComidas.Private.DataBase.Logic;
 using AplicacionCarroComidas.Private.DataBase.Model;
 using System;
 using System.Collections.Generic;
@@ -24,8 +25,10 @@ namespace AplicacionCarroComidas.Forms.Vender {
             _formVender = formVender;
             hopeCheckBox_ImprimirCoimanda.Checked = true;
         }
+
         public double Total;
         public string Productos;
+
         private async void parrotButton_Vender_Click(object sender, EventArgs e) {
             var venta = new DetalleVenta {
                 MedioPago = hopeComboBox_FormaPago.Text.ToString(),
@@ -34,25 +37,26 @@ namespace AplicacionCarroComidas.Forms.Vender {
                 AperturaID = 1
             };
 
-            // Guardar en BD  
-            if (LogicaDetalleVenta.Instancia.CargarDetalleVenta(venta)) {
-                MessageBox.Show("Venta cargada correctamente.");
+            int detalleVentaID = LogicaDetalleVenta.Instancia.CargarDetalleVenta(venta);
+
+            if (detalleVentaID > 0) {
+                Mensaje msj = new Mensaje();
+                msj.Show("Éxito", "Venta Realizada", Color.Green, Color.White, Mensaje.TipoIcono.Cash, Mensaje.TipoSonido.Confirmacion);
+                _formVender.Restaurar();
+                if (hopeCheckBox_ImprimirCoimanda.Checked) {
+                    await LogicaDetalleVenta.Instancia.ImprimirDetalleVentaAsync(detalleVentaID);
+                }
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             } else {
                 MessageBox.Show("Error al cargar la venta.");
             }
-
-            // Si quiere imprimir la comanda  
-            if (hopeCheckBox_ImprimirCoimanda.Checked) {
-                // Corrected method call to match the expected parameter type  
-                await LogicaDetalleVenta.Instancia.ImprimirDetalleVentaAsync(venta.DetalleVentaID);
-            }
-
-            this.DialogResult = DialogResult.OK;
-            this.Close();
         }
 
-        private void materialSwitch_Cobrado_CheckedChanged(object sender, EventArgs e) {
-            
+        private void parrotButton_Volver_Click(object sender, EventArgs e) {
+            _formVender.Restaurar();
+            this.Close();
         }
     }
 }

@@ -25,7 +25,6 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CargarVenta));
             this.airForm_FormaPago = new ReaLTaiizor.Forms.AirForm();
-            this.materialSwitch_Cobrado = new ReaLTaiizor.Controls.MaterialSwitch();
             this.parrotButton_Volver = new ReaLTaiizor.Controls.ParrotButton();
             this.hopeCheckBox_ImprimirCoimanda = new ReaLTaiizor.Controls.HopeCheckBox();
             this.parrotButton_Vender = new ReaLTaiizor.Controls.ParrotButton();
@@ -37,7 +36,6 @@
             // 
             this.airForm_FormaPago.BackColor = System.Drawing.Color.White;
             this.airForm_FormaPago.BorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.airForm_FormaPago.Controls.Add(this.materialSwitch_Cobrado);
             this.airForm_FormaPago.Controls.Add(this.parrotButton_Volver);
             this.airForm_FormaPago.Controls.Add(this.hopeCheckBox_ImprimirCoimanda);
             this.airForm_FormaPago.Controls.Add(this.parrotButton_Vender);
@@ -59,23 +57,6 @@
             this.airForm_FormaPago.Text = "Cargar Venta";
             this.airForm_FormaPago.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.airForm_FormaPago.Transparent = false;
-            // 
-            // materialSwitch_Cobrado
-            // 
-            this.materialSwitch_Cobrado.AutoSize = true;
-            this.materialSwitch_Cobrado.Depth = 0;
-            this.materialSwitch_Cobrado.Location = new System.Drawing.Point(96, 75);
-            this.materialSwitch_Cobrado.Margin = new System.Windows.Forms.Padding(0);
-            this.materialSwitch_Cobrado.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialSwitch_Cobrado.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.materialSwitch_Cobrado.Name = "materialSwitch_Cobrado";
-            this.materialSwitch_Cobrado.Ripple = true;
-            this.materialSwitch_Cobrado.Size = new System.Drawing.Size(218, 37);
-            this.materialSwitch_Cobrado.TabIndex = 8;
-            this.materialSwitch_Cobrado.Text = "Marcar Como Cobrado";
-            this.materialSwitch_Cobrado.UseAccentColor = false;
-            this.materialSwitch_Cobrado.UseVisualStyleBackColor = true;
-            this.materialSwitch_Cobrado.CheckedChanged += new System.EventHandler(this.materialSwitch_Cobrado_CheckedChanged);
             // 
             // parrotButton_Volver
             // 
@@ -100,6 +81,7 @@
             this.parrotButton_Volver.TextColor = System.Drawing.Color.Black;
             this.parrotButton_Volver.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.parrotButton_Volver.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.parrotButton_Volver.Click += new System.EventHandler(this.parrotButton_Volver_Click);
             // 
             // hopeCheckBox_ImprimirCoimanda
             // 
@@ -186,6 +168,5 @@
         private ReaLTaiizor.Controls.ParrotButton parrotButton_Vender;
         private ReaLTaiizor.Controls.ParrotButton parrotButton_Volver;
         private ReaLTaiizor.Controls.HopeCheckBox hopeCheckBox_ImprimirCoimanda;
-        private ReaLTaiizor.Controls.MaterialSwitch materialSwitch_Cobrado;
     }
 }

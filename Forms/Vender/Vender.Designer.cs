@@ -77,6 +77,7 @@
             this.parrotButton_Ventas = new ReaLTaiizor.Controls.ParrotButton();
             this.panel20 = new System.Windows.Forms.Panel();
             this.parrotButton2 = new ReaLTaiizor.Controls.ParrotButton();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel_Senializador.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -94,6 +95,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView_DetalleVenta)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -132,7 +134,7 @@
             this.panel_Senializador.Controls.Add(this.parrotPictureBox_Gaseosa);
             this.panel_Senializador.Controls.Add(this.panel2);
             this.panel_Senializador.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panel_Senializador.Location = new System.Drawing.Point(12, 12);
+            this.panel_Senializador.Location = new System.Drawing.Point(12, 11);
             this.panel_Senializador.Name = "panel_Senializador";
             this.panel_Senializador.Padding = new System.Windows.Forms.Padding(5);
             this.panel_Senializador.Size = new System.Drawing.Size(172, 157);
@@ -169,7 +171,7 @@
             this.panel5.Controls.Add(this.parrotPictureBox_Cerveza);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panel5.Location = new System.Drawing.Point(202, 12);
+            this.panel5.Location = new System.Drawing.Point(202, 11);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(5);
             this.panel5.Size = new System.Drawing.Size(172, 157);
@@ -236,7 +238,7 @@
             this.panel4.Controls.Add(this.parrotPictureBox_Pancho);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panel4.Location = new System.Drawing.Point(392, 187);
+            this.panel4.Location = new System.Drawing.Point(392, 186);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(5);
             this.panel4.Size = new System.Drawing.Size(172, 157);
@@ -303,7 +305,7 @@
             this.panel8.Controls.Add(this.parrotPictureBox_Choripan);
             this.panel8.Controls.Add(this.panel9);
             this.panel8.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panel8.Location = new System.Drawing.Point(202, 187);
+            this.panel8.Location = new System.Drawing.Point(202, 186);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(5);
             this.panel8.Size = new System.Drawing.Size(172, 157);
@@ -370,7 +372,7 @@
             this.panel10.Controls.Add(this.parrotPictureBox_ConoPapas);
             this.panel10.Controls.Add(this.panel11);
             this.panel10.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panel10.Location = new System.Drawing.Point(392, 12);
+            this.panel10.Location = new System.Drawing.Point(392, 11);
             this.panel10.Name = "panel10";
             this.panel10.Padding = new System.Windows.Forms.Padding(5);
             this.panel10.Size = new System.Drawing.Size(172, 157);
@@ -437,7 +439,7 @@
             this.panel16.Controls.Add(this.parrotPictureBox_Focacia);
             this.panel16.Controls.Add(this.panel17);
             this.panel16.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panel16.Location = new System.Drawing.Point(12, 362);
+            this.panel16.Location = new System.Drawing.Point(12, 361);
             this.panel16.Name = "panel16";
             this.panel16.Padding = new System.Windows.Forms.Padding(5);
             this.panel16.Size = new System.Drawing.Size(172, 157);
@@ -504,7 +506,7 @@
             this.panel18.Controls.Add(this.parrotPictureBox_ConoPapasXXL);
             this.panel18.Controls.Add(this.panel19);
             this.panel18.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panel18.Location = new System.Drawing.Point(12, 187);
+            this.panel18.Location = new System.Drawing.Point(12, 186);
             this.panel18.Name = "panel18";
             this.panel18.Padding = new System.Windows.Forms.Padding(5);
             this.panel18.Size = new System.Drawing.Size(172, 157);
@@ -811,26 +813,34 @@
             this.parrotButton2.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.parrotButton2.Click += new System.EventHandler(this.parrotButton2_Click);
             // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.parrotButton2);
+            this.panel12.Controls.Add(this.panel18);
+            this.panel12.Controls.Add(this.panel10);
+            this.panel12.Controls.Add(this.panel4);
+            this.panel12.Controls.Add(this.panel16);
+            this.panel12.Controls.Add(this.panel5);
+            this.panel12.Controls.Add(this.panel8);
+            this.panel12.Controls.Add(this.panel_Senializador);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel12.Location = new System.Drawing.Point(0, 0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(578, 519);
+            this.panel12.TabIndex = 24;
+            // 
             // Vender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(829, 519);
-            this.Controls.Add(this.parrotButton2);
+            this.Controls.Add(this.panel12);
             this.Controls.Add(this.parrotGradientPanel1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel18);
-            this.Controls.Add(this.panel10);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel16);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel_Senializador);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Vender";
             this.Text = "Vender";
-            this.Load += new System.EventHandler(this.Vender_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel_Senializador.ResumeLayout(false);
@@ -857,6 +867,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView_DetalleVenta)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel12.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -912,5 +923,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Precio;
         private System.Windows.Forms.DataGridViewImageColumn Column_Eliminar;
         private ReaLTaiizor.Controls.ParrotButton parrotButton2;
+        private System.Windows.Forms.Panel panel12;
     }
 }

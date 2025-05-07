@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Entity.Migrations.Builders;
 using System.Data.SQLite;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -38,14 +39,6 @@ namespace AplicacionCarroComidas.Forms.Vender {
 
             label_TotalDetalle.Text = total.ToString("0.00");
         }
-
-        private void panel_Senializador_Click(object sender, EventArgs e) {
-            Console.WriteLine("Panel clicked");
-        }
-
-        private void Vender_Load(object sender, EventArgs e) {
-
-        }
         public void CargarLabel() {
             var productos = LogicaComida.Instancia.MostrarComida().ToList();
 
@@ -64,58 +57,48 @@ namespace AplicacionCarroComidas.Forms.Vender {
 
 
         }
-        
-
-
         private void parrotPictureBox_Gaseosa_Click(object sender, EventArgs e) {
             bool dato = funcionVender.CargarDetalle(1, poisonDataGridView_DetalleVenta); // Use the instance  
             if (dato) {
                 ActualizarTotal();
             }
         }
-
         private void parrotPictureBox_Cerveza_Click(object sender, EventArgs e) {
             bool dato = funcionVender.CargarDetalle(2, poisonDataGridView_DetalleVenta); // Use the instance  
             if (dato) {
                 ActualizarTotal();
             }
         }
-
         private void parrotPictureBox_ConoPapas_Click(object sender, EventArgs e) {
             bool dato = funcionVender.CargarDetalle(3, poisonDataGridView_DetalleVenta); // Use the instance  
             if (dato) {
                 ActualizarTotal();
             }
         }
-
         private void parrotPictureBox_ConoPapasXXL_Click(object sender, EventArgs e) {
             bool dato = funcionVender.CargarDetalle(4, poisonDataGridView_DetalleVenta); // Use the instance  
             if (dato) {
                 ActualizarTotal();
             }
         }
-
         private void parrotPictureBox_Choripan_Click(object sender, EventArgs e) {
             bool dato = funcionVender.CargarDetalle(5, poisonDataGridView_DetalleVenta); // Use the instance  
             if (dato) {
                 ActualizarTotal();
             }
         }
-
         private void parrotPictureBox_Pancho_Click(object sender, EventArgs e) {
             bool dato = funcionVender.CargarDetalle(6, poisonDataGridView_DetalleVenta); // Use the instance  
             if (dato) {
                 ActualizarTotal();
             }
         }
-
         private void parrotPictureBox_Focacia_Click(object sender, EventArgs e) {
             bool dato = funcionVender.CargarDetalle(7, poisonDataGridView_DetalleVenta); // Use the instance  
             if (dato) {
                 ActualizarTotal();
             }
         }
-
         private void parrotButton2_Click(object sender, EventArgs e) {
             Editar formEditar = new Editar(this);
             formEditar.Show();
@@ -128,8 +111,6 @@ namespace AplicacionCarroComidas.Forms.Vender {
             poisonDataGridView_DetalleVenta.Rows.RemoveAt(rowIndex);
             ActualizarTotal(); // actualiza el total después de borrar
         }
-
-        
         private void poisonDataGridView_DetalleVenta_CellContentClick(object sender, DataGridViewCellEventArgs e) {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0) {
                 string columnName = poisonDataGridView_DetalleVenta.Columns[e.ColumnIndex].Name;
@@ -142,7 +123,6 @@ namespace AplicacionCarroComidas.Forms.Vender {
                 }
             }
         }
-
         private void parrotButton1_Click(object sender, EventArgs e) {
             int totalFilas = poisonDataGridView_DetalleVenta.Rows.Count;
 
@@ -152,6 +132,10 @@ namespace AplicacionCarroComidas.Forms.Vender {
             } else {
                 MessageBox.Show("No hay registros para borrar.");
             }
+        }
+        public void Restaurar() {
+            poisonDataGridView_DetalleVenta.Rows.Clear();
+            label_TotalDetalle.Text = "0.00"; 
         }
         private void parrotButton_Ventas_Click(object sender, EventArgs e) {
             CargarVenta _CargarVenta = new CargarVenta(this);
@@ -163,14 +147,10 @@ namespace AplicacionCarroComidas.Forms.Vender {
                     productosConcatenados += fila.Cells["Column_Producto"].Value.ToString() + " - ";
                 }
             }
-
-            // Eliminar el último guión si existe
-            if (productosConcatenados.EndsWith(" - ")) {
+            if (productosConcatenados.EndsWith(" - ")) {// Eliminar el último guión si existe
                 productosConcatenados = productosConcatenados.Substring(0, productosConcatenados.Length - 3);
             }
-
             _CargarVenta.Productos = productosConcatenados;
-
             _CargarVenta.Show();
         }
         public void label_TotalDetalle_Click(object sender, EventArgs e) {
