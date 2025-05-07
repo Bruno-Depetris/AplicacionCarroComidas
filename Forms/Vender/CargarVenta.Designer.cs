@@ -25,11 +25,11 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CargarVenta));
             this.airForm_FormaPago = new ReaLTaiizor.Forms.AirForm();
+            this.materialSwitch_Cobrado = new ReaLTaiizor.Controls.MaterialSwitch();
+            this.parrotButton_Volver = new ReaLTaiizor.Controls.ParrotButton();
+            this.hopeCheckBox_ImprimirCoimanda = new ReaLTaiizor.Controls.HopeCheckBox();
             this.parrotButton_Vender = new ReaLTaiizor.Controls.ParrotButton();
             this.hopeComboBox_FormaPago = new ReaLTaiizor.Controls.HopeComboBox();
-            this.hopeCheckBox_ImprimirCoimanda = new ReaLTaiizor.Controls.HopeCheckBox();
-            this.parrotButton_Volver = new ReaLTaiizor.Controls.ParrotButton();
-            this.materialSwitch_Cobrado = new ReaLTaiizor.Controls.MaterialSwitch();
             this.airForm_FormaPago.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,62 +60,21 @@
             this.airForm_FormaPago.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.airForm_FormaPago.Transparent = false;
             // 
-            // parrotButton_Vender
+            // materialSwitch_Cobrado
             // 
-            this.parrotButton_Vender.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.parrotButton_Vender.ButtonImage = ((System.Drawing.Image)(resources.GetObject("parrotButton_Vender.ButtonImage")));
-            this.parrotButton_Vender.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
-            this.parrotButton_Vender.ButtonText = "Vender";
-            this.parrotButton_Vender.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.parrotButton_Vender.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(151)))), ((int)(((byte)(60)))));
-            this.parrotButton_Vender.CornerRadius = 5;
-            this.parrotButton_Vender.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.parrotButton_Vender.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.parrotButton_Vender.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.parrotButton_Vender.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.parrotButton_Vender.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
-            this.parrotButton_Vender.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            this.parrotButton_Vender.Location = new System.Drawing.Point(214, 152);
-            this.parrotButton_Vender.Name = "parrotButton_Vender";
-            this.parrotButton_Vender.Size = new System.Drawing.Size(195, 50);
-            this.parrotButton_Vender.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.parrotButton_Vender.TabIndex = 4;
-            this.parrotButton_Vender.TextColor = System.Drawing.Color.Black;
-            this.parrotButton_Vender.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotButton_Vender.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            // 
-            // hopeComboBox_FormaPago
-            // 
-            this.hopeComboBox_FormaPago.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hopeComboBox_FormaPago.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.hopeComboBox_FormaPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.hopeComboBox_FormaPago.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.hopeComboBox_FormaPago.FormattingEnabled = true;
-            this.hopeComboBox_FormaPago.ItemHeight = 30;
-            this.hopeComboBox_FormaPago.Location = new System.Drawing.Point(12, 36);
-            this.hopeComboBox_FormaPago.Name = "hopeComboBox_FormaPago";
-            this.hopeComboBox_FormaPago.Size = new System.Drawing.Size(397, 36);
-            this.hopeComboBox_FormaPago.TabIndex = 2;
-            // 
-            // hopeCheckBox_ImprimirCoimanda
-            // 
-            this.hopeCheckBox_ImprimirCoimanda.AutoSize = true;
-            this.hopeCheckBox_ImprimirCoimanda.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.hopeCheckBox_ImprimirCoimanda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hopeCheckBox_ImprimirCoimanda.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
-            this.hopeCheckBox_ImprimirCoimanda.DisabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
-            this.hopeCheckBox_ImprimirCoimanda.Enable = true;
-            this.hopeCheckBox_ImprimirCoimanda.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.hopeCheckBox_ImprimirCoimanda.EnabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.hopeCheckBox_ImprimirCoimanda.EnabledUncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
-            this.hopeCheckBox_ImprimirCoimanda.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hopeCheckBox_ImprimirCoimanda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            this.hopeCheckBox_ImprimirCoimanda.Location = new System.Drawing.Point(96, 126);
-            this.hopeCheckBox_ImprimirCoimanda.Name = "hopeCheckBox_ImprimirCoimanda";
-            this.hopeCheckBox_ImprimirCoimanda.Size = new System.Drawing.Size(220, 20);
-            this.hopeCheckBox_ImprimirCoimanda.TabIndex = 5;
-            this.hopeCheckBox_ImprimirCoimanda.Text = "Imprimir Comanda?";
-            this.hopeCheckBox_ImprimirCoimanda.UseVisualStyleBackColor = true;
+            this.materialSwitch_Cobrado.AutoSize = true;
+            this.materialSwitch_Cobrado.Depth = 0;
+            this.materialSwitch_Cobrado.Location = new System.Drawing.Point(96, 75);
+            this.materialSwitch_Cobrado.Margin = new System.Windows.Forms.Padding(0);
+            this.materialSwitch_Cobrado.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialSwitch_Cobrado.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialSwitch_Cobrado.Name = "materialSwitch_Cobrado";
+            this.materialSwitch_Cobrado.Ripple = true;
+            this.materialSwitch_Cobrado.Size = new System.Drawing.Size(218, 37);
+            this.materialSwitch_Cobrado.TabIndex = 8;
+            this.materialSwitch_Cobrado.Text = "Marcar Como Cobrado";
+            this.materialSwitch_Cobrado.UseAccentColor = false;
+            this.materialSwitch_Cobrado.UseVisualStyleBackColor = true;
             // 
             // parrotButton_Volver
             // 
@@ -141,21 +100,63 @@
             this.parrotButton_Volver.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.parrotButton_Volver.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             // 
-            // materialSwitch_Cobrado
+            // hopeCheckBox_ImprimirCoimanda
             // 
-            this.materialSwitch_Cobrado.AutoSize = true;
-            this.materialSwitch_Cobrado.Depth = 0;
-            this.materialSwitch_Cobrado.Location = new System.Drawing.Point(96, 75);
-            this.materialSwitch_Cobrado.Margin = new System.Windows.Forms.Padding(0);
-            this.materialSwitch_Cobrado.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialSwitch_Cobrado.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.materialSwitch_Cobrado.Name = "materialSwitch_Cobrado";
-            this.materialSwitch_Cobrado.Ripple = true;
-            this.materialSwitch_Cobrado.Size = new System.Drawing.Size(218, 37);
-            this.materialSwitch_Cobrado.TabIndex = 8;
-            this.materialSwitch_Cobrado.Text = "Marcar Como Cobrado";
-            this.materialSwitch_Cobrado.UseAccentColor = false;
-            this.materialSwitch_Cobrado.UseVisualStyleBackColor = true;
+            this.hopeCheckBox_ImprimirCoimanda.AutoSize = true;
+            this.hopeCheckBox_ImprimirCoimanda.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.hopeCheckBox_ImprimirCoimanda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hopeCheckBox_ImprimirCoimanda.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
+            this.hopeCheckBox_ImprimirCoimanda.DisabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
+            this.hopeCheckBox_ImprimirCoimanda.Enable = true;
+            this.hopeCheckBox_ImprimirCoimanda.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.hopeCheckBox_ImprimirCoimanda.EnabledStringColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.hopeCheckBox_ImprimirCoimanda.EnabledUncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
+            this.hopeCheckBox_ImprimirCoimanda.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hopeCheckBox_ImprimirCoimanda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.hopeCheckBox_ImprimirCoimanda.Location = new System.Drawing.Point(96, 126);
+            this.hopeCheckBox_ImprimirCoimanda.Name = "hopeCheckBox_ImprimirCoimanda";
+            this.hopeCheckBox_ImprimirCoimanda.Size = new System.Drawing.Size(220, 20);
+            this.hopeCheckBox_ImprimirCoimanda.TabIndex = 5;
+            this.hopeCheckBox_ImprimirCoimanda.Text = "Imprimir Comanda?";
+            this.hopeCheckBox_ImprimirCoimanda.UseVisualStyleBackColor = true;
+            // 
+            // parrotButton_Vender
+            // 
+            this.parrotButton_Vender.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.parrotButton_Vender.ButtonImage = ((System.Drawing.Image)(resources.GetObject("parrotButton_Vender.ButtonImage")));
+            this.parrotButton_Vender.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
+            this.parrotButton_Vender.ButtonText = "Vender";
+            this.parrotButton_Vender.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.parrotButton_Vender.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(151)))), ((int)(((byte)(60)))));
+            this.parrotButton_Vender.CornerRadius = 5;
+            this.parrotButton_Vender.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.parrotButton_Vender.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.parrotButton_Vender.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.parrotButton_Vender.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.parrotButton_Vender.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
+            this.parrotButton_Vender.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
+            this.parrotButton_Vender.Location = new System.Drawing.Point(214, 152);
+            this.parrotButton_Vender.Name = "parrotButton_Vender";
+            this.parrotButton_Vender.Size = new System.Drawing.Size(195, 50);
+            this.parrotButton_Vender.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.parrotButton_Vender.TabIndex = 4;
+            this.parrotButton_Vender.TextColor = System.Drawing.Color.Black;
+            this.parrotButton_Vender.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotButton_Vender.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.parrotButton_Vender.Click += new System.EventHandler(this.parrotButton_Vender_Click);
+            // 
+            // hopeComboBox_FormaPago
+            // 
+            this.hopeComboBox_FormaPago.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hopeComboBox_FormaPago.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.hopeComboBox_FormaPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hopeComboBox_FormaPago.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.hopeComboBox_FormaPago.FormattingEnabled = true;
+            this.hopeComboBox_FormaPago.ItemHeight = 30;
+            this.hopeComboBox_FormaPago.Location = new System.Drawing.Point(12, 36);
+            this.hopeComboBox_FormaPago.Name = "hopeComboBox_FormaPago";
+            this.hopeComboBox_FormaPago.Size = new System.Drawing.Size(397, 36);
+            this.hopeComboBox_FormaPago.TabIndex = 2;
             // 
             // CargarVenta
             // 

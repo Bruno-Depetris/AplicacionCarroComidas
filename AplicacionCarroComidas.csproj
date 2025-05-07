@@ -79,6 +79,12 @@
     <Compile Include="Forms\Vender\CargarVenta.Designer.cs">
       <DependentUpon>CargarVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Vender\Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Vender\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Vender\Vender.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,13 +92,15 @@
       <DependentUpon>Vender.cs</DependentUpon>
     </Compile>
     <Compile Include="Funcion\FormPrincipal\FuncionFormPrincipal.cs" />
+    <Compile Include="Funcion\FormVender\FuncionEditar.cs" />
+    <Compile Include="Funcion\FormVender\FuncionVender.cs" />
     <Compile Include="Private\DataBase\Conectar.cs" />
-    <Compile Include="Private\DataBase\Logic\CajaLogic.cs" />
-    <Compile Include="Private\DataBase\Logic\MovimientoLogic.cs" />
-    <Compile Include="Private\DataBase\Logic\ProductoLogic.cs" />
-    <Compile Include="Private\DataBase\Logic\VentaLogic.cs" />
+    <Compile Include="Private\DataBase\Logic\DetalleVentaLogica.cs" />
+    <Compile Include="Private\DataBase\Logic\LogicaCaja.cs" />
+    <Compile Include="Private\DataBase\Logic\LogicaProducto.cs" />
+    <Compile Include="Private\DataBase\Logic\LogicaVenta.cs" />
     <Compile Include="Private\DataBase\Model\Caja.cs" />
-    <Compile Include="Private\DataBase\Model\Movimiento.cs" />
+    <Compile Include="Private\DataBase\Model\DetalleVenta.cs" />
     <Compile Include="Private\DataBase\Model\Producto.cs" />
     <Compile Include="Private\DataBase\Model\Venta.cs" />
     <Compile Include="Program.cs" />
@@ -112,6 +120,9 @@
     <EmbeddedResource Include="Forms\Vender\CargarVenta.resx">
       <DependentUpon>CargarVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Vender\Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Vender\Vender.resx">
       <DependentUpon>Vender.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,9 +135,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Content Include="AplicacionCarroComidasRepas.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <None Include="AplicacionCarroComidasRepas.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

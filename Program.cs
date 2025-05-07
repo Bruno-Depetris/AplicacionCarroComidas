@@ -1,4 +1,5 @@
-﻿using Repas;
+﻿using AplicacionCarroComidas.Private.DataBase;
+using Repas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace AplicacionCarroComidas {
         [STAThread]
         static void Main() {
             AppDomain.CurrentDomain.SetData("DataDirectory", AppDomain.CurrentDomain.BaseDirectory);
+            Conectar.Comprobar();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormPrincipal());

@@ -1,72 +1,55 @@
 ﻿CREATE TABLE Caja (
-    CajaID INTEGER PRIMARY KEY AUTOINCREMENT,
-    Apertura REAL NOT NULL,
-    Cierre REAL,
-    Fecha TEXT NOT NULL
+    id_caja INTEGER PRIMARY KEY AUTOINCREMENT,
+    fecha_apertura DATETIME NOT NULL,
+    hora_cierre DATETIME,
+    cambio_inicial REAL NOT NULL,
+    cambio_final REAL,
+    estado TEXT CHECK(estado IN ('ABIERTA', 'CERRADA')) NOT NULL
 );
-CREATE TABLE Productos (
-    ProductoID INTEGER PRIMARY KEY AUTOINCREMENT,
-    Producto TEXT NOT NULL,
-    Precio REAL NOT NULL
+CREATE TABLE Producto (
+    id_producto INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT NOT NULL,
+    precio REAL NOT NULL
 );
-CREATE TABLE Ventas (
-    HistorialID INTEGER PRIMARY KEY AUTOINCREMENT,
-    CajaID INTEGER NOT NULL,
-    ProductoID INTEGER NOT NULL,
-    Fecha TEXT NOT NULL,
-    Total REAL NOT NULL,
-    FormaPago TEXT NOT NULL,
-    FOREIGN KEY (CajaID) REFERENCES Caja(CajaID),
-    FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID)
+CREATE TABLE Venta (
+    id_venta INTEGER PRIMARY KEY AUTOINCREMENT,
+    fecha DATETIME NOT NULL,
+    total REAL NOT NULL,
+    estado_cobro TEXT CHECK(estado_cobro IN ('PENDIENTE', 'COBRADO')) NOT NULL,
+    metodo_pago TEXT CHECK(metodo_pago IN ('EFECTIVO', 'TRANSFERENCIA', 'DEBITO', '')) NOT NULL DEFAULT '',
+    id_caja INTEGER NOT NULL,
+    FOREIGN KEY (id_caja) REFERENCES Caja(id_caja)
 );
-CREATE TABLE Movimientos (
-    MovimientoID INTEGER PRIMARY KEY AUTOINCREMENT,
-    CajaID INTEGER NOT NULL,
-    Movimiento TEXT NOT NULL,
-    Fecha TEXT NOT NULL,
-    Accion TEXT NOT NULL CHECK (Accion IN ('Ingreso', 'Egreso')),
-    Forma TEXT NOT NULL,
-    FOREIGN KEY (CajaID) REFERENCES Caja(CajaID)
+CREATE TABLE DetalleVenta (
+    id_detalle INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_venta INTEGER NOT NULL,
+    Detalle INTEGER NOT NULL, (todos los productos que compro)
+    cantidad INTEGER NOT NULL,
+    subtotal REAL NOT NULL,
+    FOREIGN KEY (id_venta) REFERENCES Venta(id_venta),
+    FOREIGN KEY (id_producto) REFERENCES Producto(id_producto)
 );
-CREATE INDEX idx_ventas_fecha ON Ventas(Fecha);
-CREATE INDEX idx_ventas_cajaid ON Ventas(CajaID);
-CREATE INDEX idx_movimientos_fecha ON Movimientos(Fecha);
-CREATE TRIGGER set_total_venta
-AFTER INSERT ON Ventas
-FOR EACH ROW
-BEGIN
-    UPDATE Ventas
-    SET Total = (SELECT Precio FROM Productos WHERE ProductoID = NEW.ProductoID)
-    WHERE HistorialID = NEW.HistorialID;
-END;
+CREATE TABLE Movimiento (
+    id_movimiento INTEGER PRIMARY KEY AUTOINCREMENT,
+    fecha DATETIME NOT NULL,
+    tipo TEXT CHECK(tipo IN ('INGRESO', 'RETIRO')) NOT NULL,
+    motivo TEXT,
+    monto REAL NOT NULL,
+    metodo TEXT CHECK(metodo IN ('EFECTIVO', 'TRANSFERENCIA', 'DEBITO')) NOT NULL,
+    id_caja INTEGER NOT NULL,
+    FOREIGN KEY (id_caja) REFERENCES Caja(id_caja)
+);
+CREATE VIEW HistorialVentas AS
+SELECT 
+    V.id_venta,
+    V.fecha,
+    GROUP_CONCAT(P.nombre || ' x' || DV.cantidad, ', ') AS productos,
+    V.total,
+    V.estado_cobro,
+    V.metodo_pago
+FROM Venta V
+JOIN DetalleVenta DV ON V.id_venta = DV.id_venta
+JOIN Producto P ON DV.id_producto = P.id_producto
+GROUP BY V.id_venta;
 
-CREATE TRIGGER log_movimiento_venta
-AFTER INSERT ON Ventas
-FOR EACH ROW
-BEGIN
-    INSERT INTO Movimientos (CajaID, Movimiento, Fecha, Accion, Forma)
-    VALUES (NEW.CajaID, 'Venta ProductoID ' || NEW.ProductoID, NEW.Fecha, 'Ingreso', NEW.FormaPago);
-END;
-CREATE VIEW Vista_VentasPorCaja AS
-SELECT 
-    V.CajaID,
-    C.Fecha AS FechaCaja,
-    V.Fecha AS FechaVenta,
-    P.Producto,
-    P.Precio,
-    V.Total,
-    V.FormaPago
-FROM Ventas V
-JOIN Productos P ON V.ProductoID = P.ProductoID
-JOIN Caja C ON V.CajaID = C.CajaID;
-CREATE VIEW Vista_ResumenCaja AS
-SELECT 
-    C.CajaID,
-    C.Fecha,
-    SUM(V.Total) AS TotalVentas,
-    (SELECT SUM(Monto) FROM Movimientos WHERE CajaID = C.CajaID AND Accion = 'Ingreso') AS TotalIngresos,
-    (SELECT SUM(Monto) FROM Movimientos WHERE CajaID = C.CajaID AND Accion = 'Egreso') AS TotalEgresos
-FROM Caja C
-LEFT JOIN Ventas V ON C.CajaID = V.CajaID
-GROUP BY C.CajaID;
-ALTER TABLE Movimientos ADD COLUMN Monto REAL;
+AplicacionCarroComidasRepas

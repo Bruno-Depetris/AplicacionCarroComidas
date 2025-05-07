@@ -31,39 +31,41 @@
             this.label_PrecioGaseosa = new System.Windows.Forms.Label();
             this.Gaseosa = new System.Windows.Forms.Label();
             this.panel_Senializador = new ReaLTaiizor.Controls.Panel();
-            this.parrotPictureBox1 = new ReaLTaiizor.Controls.ParrotPictureBox();
+            this.parrotPictureBox_Gaseosa = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.panel5 = new ReaLTaiizor.Controls.Panel();
-            this.parrotPictureBox2 = new ReaLTaiizor.Controls.ParrotPictureBox();
+            this.parrotPictureBox_Cerveza = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label_PrecioCerveza = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new ReaLTaiizor.Controls.Panel();
-            this.parrotPictureBox3 = new ReaLTaiizor.Controls.ParrotPictureBox();
+            this.parrotPictureBox_Pancho = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label_PrecioPancho = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel8 = new ReaLTaiizor.Controls.Panel();
-            this.parrotPictureBox4 = new ReaLTaiizor.Controls.ParrotPictureBox();
+            this.parrotPictureBox_Choripan = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label_PrecioChoripan = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel10 = new ReaLTaiizor.Controls.Panel();
-            this.parrotPictureBox5 = new ReaLTaiizor.Controls.ParrotPictureBox();
+            this.parrotPictureBox_ConoPapas = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label_PrecioConoPapas = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel16 = new ReaLTaiizor.Controls.Panel();
-            this.parrotPictureBox8 = new ReaLTaiizor.Controls.ParrotPictureBox();
+            this.parrotPictureBox_Focacia = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label_PrecioFoccacia = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel18 = new ReaLTaiizor.Controls.Panel();
-            this.parrotPictureBox9 = new ReaLTaiizor.Controls.ParrotPictureBox();
+            this.parrotPictureBox_ConoPapasXXL = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.panel19 = new System.Windows.Forms.Panel();
             this.label1_PrecioConoPapasXXL = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label_TotalDetalle = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.poisonDataGridView_DetalleVenta = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.Column_PorductoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,8 +76,7 @@
             this.parrotButton1 = new ReaLTaiizor.Controls.ParrotButton();
             this.parrotButton_Ventas = new ReaLTaiizor.Controls.ParrotButton();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label_TotalDetalle = new System.Windows.Forms.Label();
+            this.parrotButton2 = new ReaLTaiizor.Controls.ParrotButton();
             this.panel2.SuspendLayout();
             this.panel_Senializador.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -100,9 +101,9 @@
             this.panel2.Controls.Add(this.label_PrecioGaseosa);
             this.panel2.Controls.Add(this.Gaseosa);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(5, 112);
+            this.panel2.Location = new System.Drawing.Point(5, 118);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(162, 40);
+            this.panel2.Size = new System.Drawing.Size(162, 34);
             this.panel2.TabIndex = 1;
             // 
             // label_PrecioGaseosa
@@ -128,7 +129,7 @@
             // panel_Senializador
             // 
             this.panel_Senializador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
-            this.panel_Senializador.Controls.Add(this.parrotPictureBox1);
+            this.panel_Senializador.Controls.Add(this.parrotPictureBox_Gaseosa);
             this.panel_Senializador.Controls.Add(this.panel2);
             this.panel_Senializador.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panel_Senializador.Location = new System.Drawing.Point(12, 12);
@@ -139,32 +140,33 @@
             this.panel_Senializador.TabIndex = 10;
             this.panel_Senializador.Text = "panel1";
             // 
-            // parrotPictureBox1
+            // parrotPictureBox_Gaseosa
             // 
-            this.parrotPictureBox1.ColorLeft = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox1.ColorRight = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.parrotPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parrotPictureBox1.FilterAlpha = 200;
-            this.parrotPictureBox1.FilterEnabled = false;
-            this.parrotPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox1.Image")));
-            this.parrotPictureBox1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotPictureBox1.IsElipse = false;
-            this.parrotPictureBox1.IsParallax = false;
-            this.parrotPictureBox1.Location = new System.Drawing.Point(5, 5);
-            this.parrotPictureBox1.Name = "parrotPictureBox1";
-            this.parrotPictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotPictureBox1.Size = new System.Drawing.Size(162, 107);
-            this.parrotPictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotPictureBox1.TabIndex = 0;
-            this.parrotPictureBox1.Text = "parrotPictureBox1";
-            this.parrotPictureBox1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotPictureBox_Gaseosa.ColorLeft = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox_Gaseosa.ColorRight = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox_Gaseosa.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotPictureBox_Gaseosa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.parrotPictureBox_Gaseosa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.parrotPictureBox_Gaseosa.FilterAlpha = 200;
+            this.parrotPictureBox_Gaseosa.FilterEnabled = false;
+            this.parrotPictureBox_Gaseosa.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox_Gaseosa.Image")));
+            this.parrotPictureBox_Gaseosa.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotPictureBox_Gaseosa.IsElipse = false;
+            this.parrotPictureBox_Gaseosa.IsParallax = false;
+            this.parrotPictureBox_Gaseosa.Location = new System.Drawing.Point(5, 5);
+            this.parrotPictureBox_Gaseosa.Name = "parrotPictureBox_Gaseosa";
+            this.parrotPictureBox_Gaseosa.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotPictureBox_Gaseosa.Size = new System.Drawing.Size(162, 113);
+            this.parrotPictureBox_Gaseosa.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotPictureBox_Gaseosa.TabIndex = 0;
+            this.parrotPictureBox_Gaseosa.Text = "parrotPictureBox1";
+            this.parrotPictureBox_Gaseosa.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotPictureBox_Gaseosa.Click += new System.EventHandler(this.parrotPictureBox_Gaseosa_Click);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
-            this.panel5.Controls.Add(this.parrotPictureBox2);
+            this.panel5.Controls.Add(this.parrotPictureBox_Cerveza);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panel5.Location = new System.Drawing.Point(202, 12);
@@ -175,36 +177,37 @@
             this.panel5.TabIndex = 11;
             this.panel5.Text = "panel1";
             // 
-            // parrotPictureBox2
+            // parrotPictureBox_Cerveza
             // 
-            this.parrotPictureBox2.ColorLeft = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox2.ColorRight = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox2.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotPictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.parrotPictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parrotPictureBox2.FilterAlpha = 200;
-            this.parrotPictureBox2.FilterEnabled = false;
-            this.parrotPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox2.Image")));
-            this.parrotPictureBox2.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotPictureBox2.IsElipse = false;
-            this.parrotPictureBox2.IsParallax = false;
-            this.parrotPictureBox2.Location = new System.Drawing.Point(5, 5);
-            this.parrotPictureBox2.Name = "parrotPictureBox2";
-            this.parrotPictureBox2.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotPictureBox2.Size = new System.Drawing.Size(162, 107);
-            this.parrotPictureBox2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotPictureBox2.TabIndex = 0;
-            this.parrotPictureBox2.Text = "parrotPictureBox2";
-            this.parrotPictureBox2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotPictureBox_Cerveza.ColorLeft = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox_Cerveza.ColorRight = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox_Cerveza.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotPictureBox_Cerveza.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.parrotPictureBox_Cerveza.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.parrotPictureBox_Cerveza.FilterAlpha = 200;
+            this.parrotPictureBox_Cerveza.FilterEnabled = false;
+            this.parrotPictureBox_Cerveza.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox_Cerveza.Image")));
+            this.parrotPictureBox_Cerveza.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotPictureBox_Cerveza.IsElipse = false;
+            this.parrotPictureBox_Cerveza.IsParallax = false;
+            this.parrotPictureBox_Cerveza.Location = new System.Drawing.Point(5, 5);
+            this.parrotPictureBox_Cerveza.Name = "parrotPictureBox_Cerveza";
+            this.parrotPictureBox_Cerveza.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotPictureBox_Cerveza.Size = new System.Drawing.Size(162, 113);
+            this.parrotPictureBox_Cerveza.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotPictureBox_Cerveza.TabIndex = 0;
+            this.parrotPictureBox_Cerveza.Text = "parrotPictureBox2";
+            this.parrotPictureBox_Cerveza.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotPictureBox_Cerveza.Click += new System.EventHandler(this.parrotPictureBox_Cerveza_Click);
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.label_PrecioCerveza);
             this.panel6.Controls.Add(this.label3);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(5, 112);
+            this.panel6.Location = new System.Drawing.Point(5, 118);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(162, 40);
+            this.panel6.Size = new System.Drawing.Size(162, 34);
             this.panel6.TabIndex = 1;
             // 
             // label_PrecioCerveza
@@ -230,7 +233,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
-            this.panel4.Controls.Add(this.parrotPictureBox3);
+            this.panel4.Controls.Add(this.parrotPictureBox_Pancho);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panel4.Location = new System.Drawing.Point(392, 187);
@@ -241,36 +244,37 @@
             this.panel4.TabIndex = 13;
             this.panel4.Text = "panel1";
             // 
-            // parrotPictureBox3
+            // parrotPictureBox_Pancho
             // 
-            this.parrotPictureBox3.ColorLeft = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox3.ColorRight = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox3.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotPictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.parrotPictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parrotPictureBox3.FilterAlpha = 200;
-            this.parrotPictureBox3.FilterEnabled = false;
-            this.parrotPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox3.Image")));
-            this.parrotPictureBox3.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotPictureBox3.IsElipse = false;
-            this.parrotPictureBox3.IsParallax = false;
-            this.parrotPictureBox3.Location = new System.Drawing.Point(5, 5);
-            this.parrotPictureBox3.Name = "parrotPictureBox3";
-            this.parrotPictureBox3.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotPictureBox3.Size = new System.Drawing.Size(162, 107);
-            this.parrotPictureBox3.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotPictureBox3.TabIndex = 0;
-            this.parrotPictureBox3.Text = "parrotPictureBox3";
-            this.parrotPictureBox3.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotPictureBox_Pancho.ColorLeft = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox_Pancho.ColorRight = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox_Pancho.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotPictureBox_Pancho.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.parrotPictureBox_Pancho.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.parrotPictureBox_Pancho.FilterAlpha = 200;
+            this.parrotPictureBox_Pancho.FilterEnabled = false;
+            this.parrotPictureBox_Pancho.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox_Pancho.Image")));
+            this.parrotPictureBox_Pancho.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotPictureBox_Pancho.IsElipse = false;
+            this.parrotPictureBox_Pancho.IsParallax = false;
+            this.parrotPictureBox_Pancho.Location = new System.Drawing.Point(5, 5);
+            this.parrotPictureBox_Pancho.Name = "parrotPictureBox_Pancho";
+            this.parrotPictureBox_Pancho.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotPictureBox_Pancho.Size = new System.Drawing.Size(162, 113);
+            this.parrotPictureBox_Pancho.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotPictureBox_Pancho.TabIndex = 0;
+            this.parrotPictureBox_Pancho.Text = "parrotPictureBox3";
+            this.parrotPictureBox_Pancho.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotPictureBox_Pancho.Click += new System.EventHandler(this.parrotPictureBox_Pancho_Click);
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.label_PrecioPancho);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(5, 112);
+            this.panel7.Location = new System.Drawing.Point(5, 118);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(162, 40);
+            this.panel7.Size = new System.Drawing.Size(162, 34);
             this.panel7.TabIndex = 1;
             // 
             // label_PrecioPancho
@@ -296,7 +300,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
-            this.panel8.Controls.Add(this.parrotPictureBox4);
+            this.panel8.Controls.Add(this.parrotPictureBox_Choripan);
             this.panel8.Controls.Add(this.panel9);
             this.panel8.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panel8.Location = new System.Drawing.Point(202, 187);
@@ -307,36 +311,37 @@
             this.panel8.TabIndex = 12;
             this.panel8.Text = "panel1";
             // 
-            // parrotPictureBox4
+            // parrotPictureBox_Choripan
             // 
-            this.parrotPictureBox4.ColorLeft = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox4.ColorRight = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox4.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotPictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.parrotPictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parrotPictureBox4.FilterAlpha = 200;
-            this.parrotPictureBox4.FilterEnabled = false;
-            this.parrotPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox4.Image")));
-            this.parrotPictureBox4.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotPictureBox4.IsElipse = false;
-            this.parrotPictureBox4.IsParallax = false;
-            this.parrotPictureBox4.Location = new System.Drawing.Point(5, 5);
-            this.parrotPictureBox4.Name = "parrotPictureBox4";
-            this.parrotPictureBox4.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotPictureBox4.Size = new System.Drawing.Size(162, 107);
-            this.parrotPictureBox4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotPictureBox4.TabIndex = 0;
-            this.parrotPictureBox4.Text = "parrotPictureBox4";
-            this.parrotPictureBox4.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotPictureBox_Choripan.ColorLeft = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox_Choripan.ColorRight = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox_Choripan.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotPictureBox_Choripan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.parrotPictureBox_Choripan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.parrotPictureBox_Choripan.FilterAlpha = 200;
+            this.parrotPictureBox_Choripan.FilterEnabled = false;
+            this.parrotPictureBox_Choripan.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox_Choripan.Image")));
+            this.parrotPictureBox_Choripan.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotPictureBox_Choripan.IsElipse = false;
+            this.parrotPictureBox_Choripan.IsParallax = false;
+            this.parrotPictureBox_Choripan.Location = new System.Drawing.Point(5, 5);
+            this.parrotPictureBox_Choripan.Name = "parrotPictureBox_Choripan";
+            this.parrotPictureBox_Choripan.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotPictureBox_Choripan.Size = new System.Drawing.Size(162, 113);
+            this.parrotPictureBox_Choripan.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotPictureBox_Choripan.TabIndex = 0;
+            this.parrotPictureBox_Choripan.Text = "parrotPictureBox4";
+            this.parrotPictureBox_Choripan.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotPictureBox_Choripan.Click += new System.EventHandler(this.parrotPictureBox_Choripan_Click);
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.label_PrecioChoripan);
             this.panel9.Controls.Add(this.label7);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel9.Location = new System.Drawing.Point(5, 112);
+            this.panel9.Location = new System.Drawing.Point(5, 118);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(162, 40);
+            this.panel9.Size = new System.Drawing.Size(162, 34);
             this.panel9.TabIndex = 1;
             // 
             // label_PrecioChoripan
@@ -362,7 +367,7 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
-            this.panel10.Controls.Add(this.parrotPictureBox5);
+            this.panel10.Controls.Add(this.parrotPictureBox_ConoPapas);
             this.panel10.Controls.Add(this.panel11);
             this.panel10.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panel10.Location = new System.Drawing.Point(392, 12);
@@ -373,36 +378,37 @@
             this.panel10.TabIndex = 14;
             this.panel10.Text = "panel1";
             // 
-            // parrotPictureBox5
+            // parrotPictureBox_ConoPapas
             // 
-            this.parrotPictureBox5.ColorLeft = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox5.ColorRight = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox5.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotPictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.parrotPictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parrotPictureBox5.FilterAlpha = 200;
-            this.parrotPictureBox5.FilterEnabled = false;
-            this.parrotPictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox5.Image")));
-            this.parrotPictureBox5.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotPictureBox5.IsElipse = false;
-            this.parrotPictureBox5.IsParallax = false;
-            this.parrotPictureBox5.Location = new System.Drawing.Point(5, 5);
-            this.parrotPictureBox5.Name = "parrotPictureBox5";
-            this.parrotPictureBox5.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotPictureBox5.Size = new System.Drawing.Size(162, 107);
-            this.parrotPictureBox5.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotPictureBox5.TabIndex = 0;
-            this.parrotPictureBox5.Text = "parrotPictureBox5";
-            this.parrotPictureBox5.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotPictureBox_ConoPapas.ColorLeft = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox_ConoPapas.ColorRight = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox_ConoPapas.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotPictureBox_ConoPapas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.parrotPictureBox_ConoPapas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.parrotPictureBox_ConoPapas.FilterAlpha = 200;
+            this.parrotPictureBox_ConoPapas.FilterEnabled = false;
+            this.parrotPictureBox_ConoPapas.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox_ConoPapas.Image")));
+            this.parrotPictureBox_ConoPapas.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotPictureBox_ConoPapas.IsElipse = false;
+            this.parrotPictureBox_ConoPapas.IsParallax = false;
+            this.parrotPictureBox_ConoPapas.Location = new System.Drawing.Point(5, 5);
+            this.parrotPictureBox_ConoPapas.Name = "parrotPictureBox_ConoPapas";
+            this.parrotPictureBox_ConoPapas.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotPictureBox_ConoPapas.Size = new System.Drawing.Size(162, 113);
+            this.parrotPictureBox_ConoPapas.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotPictureBox_ConoPapas.TabIndex = 0;
+            this.parrotPictureBox_ConoPapas.Text = "parrotPictureBox5";
+            this.parrotPictureBox_ConoPapas.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotPictureBox_ConoPapas.Click += new System.EventHandler(this.parrotPictureBox_ConoPapas_Click);
             // 
             // panel11
             // 
             this.panel11.Controls.Add(this.label_PrecioConoPapas);
             this.panel11.Controls.Add(this.label9);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel11.Location = new System.Drawing.Point(5, 112);
+            this.panel11.Location = new System.Drawing.Point(5, 118);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(162, 40);
+            this.panel11.Size = new System.Drawing.Size(162, 34);
             this.panel11.TabIndex = 1;
             // 
             // label_PrecioConoPapas
@@ -428,7 +434,7 @@
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
-            this.panel16.Controls.Add(this.parrotPictureBox8);
+            this.panel16.Controls.Add(this.parrotPictureBox_Focacia);
             this.panel16.Controls.Add(this.panel17);
             this.panel16.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panel16.Location = new System.Drawing.Point(12, 362);
@@ -439,36 +445,37 @@
             this.panel16.TabIndex = 15;
             this.panel16.Text = "panel1";
             // 
-            // parrotPictureBox8
+            // parrotPictureBox_Focacia
             // 
-            this.parrotPictureBox8.ColorLeft = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox8.ColorRight = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox8.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotPictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.parrotPictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parrotPictureBox8.FilterAlpha = 200;
-            this.parrotPictureBox8.FilterEnabled = false;
-            this.parrotPictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox8.Image")));
-            this.parrotPictureBox8.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotPictureBox8.IsElipse = false;
-            this.parrotPictureBox8.IsParallax = false;
-            this.parrotPictureBox8.Location = new System.Drawing.Point(5, 5);
-            this.parrotPictureBox8.Name = "parrotPictureBox8";
-            this.parrotPictureBox8.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotPictureBox8.Size = new System.Drawing.Size(162, 107);
-            this.parrotPictureBox8.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotPictureBox8.TabIndex = 0;
-            this.parrotPictureBox8.Text = "parrotPictureBox8";
-            this.parrotPictureBox8.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotPictureBox_Focacia.ColorLeft = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox_Focacia.ColorRight = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox_Focacia.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotPictureBox_Focacia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.parrotPictureBox_Focacia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.parrotPictureBox_Focacia.FilterAlpha = 200;
+            this.parrotPictureBox_Focacia.FilterEnabled = false;
+            this.parrotPictureBox_Focacia.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox_Focacia.Image")));
+            this.parrotPictureBox_Focacia.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotPictureBox_Focacia.IsElipse = false;
+            this.parrotPictureBox_Focacia.IsParallax = false;
+            this.parrotPictureBox_Focacia.Location = new System.Drawing.Point(5, 5);
+            this.parrotPictureBox_Focacia.Name = "parrotPictureBox_Focacia";
+            this.parrotPictureBox_Focacia.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotPictureBox_Focacia.Size = new System.Drawing.Size(162, 113);
+            this.parrotPictureBox_Focacia.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotPictureBox_Focacia.TabIndex = 0;
+            this.parrotPictureBox_Focacia.Text = "parrotPictureBox8";
+            this.parrotPictureBox_Focacia.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotPictureBox_Focacia.Click += new System.EventHandler(this.parrotPictureBox_Focacia_Click);
             // 
             // panel17
             // 
             this.panel17.Controls.Add(this.label_PrecioFoccacia);
             this.panel17.Controls.Add(this.label15);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel17.Location = new System.Drawing.Point(5, 112);
+            this.panel17.Location = new System.Drawing.Point(5, 118);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(162, 40);
+            this.panel17.Size = new System.Drawing.Size(162, 34);
             this.panel17.TabIndex = 1;
             // 
             // label_PrecioFoccacia
@@ -494,7 +501,7 @@
             // panel18
             // 
             this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
-            this.panel18.Controls.Add(this.parrotPictureBox9);
+            this.panel18.Controls.Add(this.parrotPictureBox_ConoPapasXXL);
             this.panel18.Controls.Add(this.panel19);
             this.panel18.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panel18.Location = new System.Drawing.Point(12, 187);
@@ -505,36 +512,37 @@
             this.panel18.TabIndex = 11;
             this.panel18.Text = "panel1";
             // 
-            // parrotPictureBox9
+            // parrotPictureBox_ConoPapasXXL
             // 
-            this.parrotPictureBox9.ColorLeft = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox9.ColorRight = System.Drawing.Color.DodgerBlue;
-            this.parrotPictureBox9.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotPictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.parrotPictureBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parrotPictureBox9.FilterAlpha = 200;
-            this.parrotPictureBox9.FilterEnabled = false;
-            this.parrotPictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox9.Image")));
-            this.parrotPictureBox9.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotPictureBox9.IsElipse = false;
-            this.parrotPictureBox9.IsParallax = false;
-            this.parrotPictureBox9.Location = new System.Drawing.Point(5, 5);
-            this.parrotPictureBox9.Name = "parrotPictureBox9";
-            this.parrotPictureBox9.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotPictureBox9.Size = new System.Drawing.Size(162, 107);
-            this.parrotPictureBox9.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.parrotPictureBox9.TabIndex = 0;
-            this.parrotPictureBox9.Text = "parrotPictureBox9";
-            this.parrotPictureBox9.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotPictureBox_ConoPapasXXL.ColorLeft = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox_ConoPapasXXL.ColorRight = System.Drawing.Color.DodgerBlue;
+            this.parrotPictureBox_ConoPapasXXL.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotPictureBox_ConoPapasXXL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.parrotPictureBox_ConoPapasXXL.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.parrotPictureBox_ConoPapasXXL.FilterAlpha = 200;
+            this.parrotPictureBox_ConoPapasXXL.FilterEnabled = false;
+            this.parrotPictureBox_ConoPapasXXL.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox_ConoPapasXXL.Image")));
+            this.parrotPictureBox_ConoPapasXXL.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotPictureBox_ConoPapasXXL.IsElipse = false;
+            this.parrotPictureBox_ConoPapasXXL.IsParallax = false;
+            this.parrotPictureBox_ConoPapasXXL.Location = new System.Drawing.Point(5, 5);
+            this.parrotPictureBox_ConoPapasXXL.Name = "parrotPictureBox_ConoPapasXXL";
+            this.parrotPictureBox_ConoPapasXXL.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotPictureBox_ConoPapasXXL.Size = new System.Drawing.Size(162, 113);
+            this.parrotPictureBox_ConoPapasXXL.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotPictureBox_ConoPapasXXL.TabIndex = 0;
+            this.parrotPictureBox_ConoPapasXXL.Text = "parrotPictureBox9";
+            this.parrotPictureBox_ConoPapasXXL.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotPictureBox_ConoPapasXXL.Click += new System.EventHandler(this.parrotPictureBox_ConoPapasXXL_Click);
             // 
             // panel19
             // 
             this.panel19.Controls.Add(this.label1_PrecioConoPapasXXL);
             this.panel19.Controls.Add(this.label17);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel19.Location = new System.Drawing.Point(5, 112);
+            this.panel19.Location = new System.Drawing.Point(5, 118);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(162, 40);
+            this.panel19.Size = new System.Drawing.Size(162, 34);
             this.panel19.TabIndex = 1;
             // 
             // label1_PrecioConoPapasXXL
@@ -564,7 +572,7 @@
             this.parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             this.parrotGradientPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotGradientPanel1.Location = new System.Drawing.Point(602, 0);
+            this.parrotGradientPanel1.Location = new System.Drawing.Point(578, 0);
             this.parrotGradientPanel1.Name = "parrotGradientPanel1";
             this.parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             this.parrotGradientPanel1.PrimerColor = System.Drawing.Color.White;
@@ -586,13 +594,37 @@
             this.panel1.Controls.Add(this.parrotButton_Ventas);
             this.panel1.Controls.Add(this.panel20);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(612, 0);
+            this.panel1.Location = new System.Drawing.Point(588, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(217, 519);
+            this.panel1.Size = new System.Drawing.Size(241, 519);
             this.panel1.TabIndex = 21;
+            // 
+            // label_TotalDetalle
+            // 
+            this.label_TotalDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label_TotalDetalle.AutoSize = true;
+            this.label_TotalDetalle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TotalDetalle.Location = new System.Drawing.Point(69, 394);
+            this.label_TotalDetalle.Name = "label_TotalDetalle";
+            this.label_TotalDetalle.Size = new System.Drawing.Size(41, 20);
+            this.label_TotalDetalle.TabIndex = 9;
+            this.label_TotalDetalle.Text = "9999";
+            this.label_TotalDetalle.Click += new System.EventHandler(this.label_TotalDetalle_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 394);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Total: $";
             // 
             // poisonDataGridView_DetalleVenta
             // 
+            this.poisonDataGridView_DetalleVenta.AccessibleDescription = "Public";
             this.poisonDataGridView_DetalleVenta.AllowUserToAddRows = false;
             this.poisonDataGridView_DetalleVenta.AllowUserToResizeRows = false;
             this.poisonDataGridView_DetalleVenta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -613,11 +645,11 @@
             this.Column_Producto,
             this.Column_Precio,
             this.Column_Eliminar});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.poisonDataGridView_DetalleVenta.DefaultCellStyle = dataGridViewCellStyle2;
@@ -639,8 +671,9 @@
             this.poisonDataGridView_DetalleVenta.RowHeadersVisible = false;
             this.poisonDataGridView_DetalleVenta.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.poisonDataGridView_DetalleVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.poisonDataGridView_DetalleVenta.Size = new System.Drawing.Size(216, 321);
+            this.poisonDataGridView_DetalleVenta.Size = new System.Drawing.Size(240, 321);
             this.poisonDataGridView_DetalleVenta.TabIndex = 7;
+            this.poisonDataGridView_DetalleVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.poisonDataGridView_DetalleVenta_CellContentClick);
             // 
             // Column_PorductoID
             // 
@@ -665,6 +698,8 @@
             // 
             this.Column_Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column_Eliminar.HeaderText = "Eliminar";
+            this.Column_Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Column_Eliminar.Image")));
+            this.Column_Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Column_Eliminar.Name = "Column_Eliminar";
             this.Column_Eliminar.ReadOnly = true;
             // 
@@ -674,7 +709,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(1, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(216, 55);
+            this.panel3.Size = new System.Drawing.Size(240, 55);
             this.panel3.TabIndex = 6;
             // 
             // bigLabel1
@@ -707,12 +742,13 @@
             this.parrotButton1.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
             this.parrotButton1.Location = new System.Drawing.Point(1, 419);
             this.parrotButton1.Name = "parrotButton1";
-            this.parrotButton1.Size = new System.Drawing.Size(216, 50);
+            this.parrotButton1.Size = new System.Drawing.Size(240, 50);
             this.parrotButton1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.parrotButton1.TabIndex = 5;
             this.parrotButton1.TextColor = System.Drawing.Color.Black;
             this.parrotButton1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.parrotButton1.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.parrotButton1.Click += new System.EventHandler(this.parrotButton1_Click);
             // 
             // parrotButton_Ventas
             // 
@@ -732,12 +768,13 @@
             this.parrotButton_Ventas.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
             this.parrotButton_Ventas.Location = new System.Drawing.Point(1, 469);
             this.parrotButton_Ventas.Name = "parrotButton_Ventas";
-            this.parrotButton_Ventas.Size = new System.Drawing.Size(216, 50);
+            this.parrotButton_Ventas.Size = new System.Drawing.Size(240, 50);
             this.parrotButton_Ventas.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.parrotButton_Ventas.TabIndex = 4;
             this.parrotButton_Ventas.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
             this.parrotButton_Ventas.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.parrotButton_Ventas.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.parrotButton_Ventas.Click += new System.EventHandler(this.parrotButton_Ventas_Click);
             // 
             // panel20
             // 
@@ -748,27 +785,31 @@
             this.panel20.Size = new System.Drawing.Size(1, 519);
             this.panel20.TabIndex = 0;
             // 
-            // label1
+            // parrotButton2
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 394);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 20);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Total: $";
-            // 
-            // label_TotalDetalle
-            // 
-            this.label_TotalDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label_TotalDetalle.AutoSize = true;
-            this.label_TotalDetalle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TotalDetalle.Location = new System.Drawing.Point(69, 394);
-            this.label_TotalDetalle.Name = "label_TotalDetalle";
-            this.label_TotalDetalle.Size = new System.Drawing.Size(41, 20);
-            this.label_TotalDetalle.TabIndex = 9;
-            this.label_TotalDetalle.Text = "9999";
+            this.parrotButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.parrotButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.parrotButton2.ButtonImage = ((System.Drawing.Image)(resources.GetObject("parrotButton2.ButtonImage")));
+            this.parrotButton2.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
+            this.parrotButton2.ButtonText = "Editar";
+            this.parrotButton2.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.parrotButton2.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(151)))), ((int)(((byte)(60)))));
+            this.parrotButton2.CornerRadius = 5;
+            this.parrotButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.parrotButton2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.parrotButton2.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.parrotButton2.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.parrotButton2.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
+            this.parrotButton2.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
+            this.parrotButton2.Location = new System.Drawing.Point(444, 477);
+            this.parrotButton2.Name = "parrotButton2";
+            this.parrotButton2.Size = new System.Drawing.Size(128, 37);
+            this.parrotButton2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.parrotButton2.TabIndex = 23;
+            this.parrotButton2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.parrotButton2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotButton2.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.parrotButton2.Click += new System.EventHandler(this.parrotButton2_Click);
             // 
             // Vender
             // 
@@ -776,6 +817,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(829, 519);
+            this.Controls.Add(this.parrotButton2);
             this.Controls.Add(this.parrotGradientPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel18);
@@ -822,46 +864,42 @@
         #endregion
         private System.Windows.Forms.Panel panel2;
         private ReaLTaiizor.Controls.Panel panel_Senializador;
-        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox1;
+        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox_Gaseosa;
         private System.Windows.Forms.Label Gaseosa;
         private System.Windows.Forms.Label label_PrecioGaseosa;
         private ReaLTaiizor.Controls.Panel panel5;
-        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox2;
+        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox_Cerveza;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label_PrecioCerveza;
         private System.Windows.Forms.Label label3;
         private ReaLTaiizor.Controls.Panel panel4;
-        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox3;
+        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox_Pancho;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label_PrecioPancho;
         private System.Windows.Forms.Label label5;
         private ReaLTaiizor.Controls.Panel panel8;
-        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox4;
+        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox_Choripan;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label_PrecioChoripan;
         private System.Windows.Forms.Label label7;
         private ReaLTaiizor.Controls.Panel panel10;
-        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox5;
+        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox_ConoPapas;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label_PrecioConoPapas;
         private System.Windows.Forms.Label label9;
         private ReaLTaiizor.Controls.Panel panel16;
-        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox8;
+        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox_Focacia;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label label_PrecioFoccacia;
         private System.Windows.Forms.Label label15;
         private ReaLTaiizor.Controls.Panel panel18;
-        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox9;
+        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox_ConoPapasXXL;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Label label1_PrecioConoPapasXXL;
         private System.Windows.Forms.Label label17;
         private ReaLTaiizor.Controls.ParrotGradientPanel parrotGradientPanel1;
         private System.Windows.Forms.Panel panel1;
         private ReaLTaiizor.Controls.PoisonDataGridView poisonDataGridView_DetalleVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_PorductoID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Precio;
-        private System.Windows.Forms.DataGridViewImageColumn Column_Eliminar;
         private System.Windows.Forms.Panel panel3;
         private ReaLTaiizor.Controls.BigLabel bigLabel1;
         private ReaLTaiizor.Controls.ParrotButton parrotButton1;
@@ -869,5 +907,10 @@
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Label label_TotalDetalle;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_PorductoID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Precio;
+        private System.Windows.Forms.DataGridViewImageColumn Column_Eliminar;
+        private ReaLTaiizor.Controls.ParrotButton parrotButton2;
     }
 }
