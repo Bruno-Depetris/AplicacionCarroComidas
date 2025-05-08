@@ -78,27 +78,66 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
                 cn?.Close();
             }
         }
-
         // Cargar MovimientosCaja (Insertar un nuevo movimiento)
         public bool CargarMovimientoCaja(MovimientoCaja movimientoCaja) {
             SQLiteConnection cn = null;
+            SQLiteTransaction tx = null;
             try {
                 cn = Conectar.ObtenerConexion();
-                string query = "INSERT INTO MovimientosCaja (Motivo, Tipo, Monto, Metodo, AperturaID) VALUES (@motivo, @tipo, @monto, @metodo, @aperturaID)";
-                using (var cmd = new SQLiteCommand(query, cn)) {
+                tx = cn.BeginTransaction();
+
+                // 1. Insertar el movimiento en la tabla MovimientosCaja
+                string queryInsert = @"INSERT INTO MovimientosCaja 
+                               (Motivo, Tipo, Monto, Metodo, AperturaID) 
+                               VALUES (@motivo, @tipo, @monto, @metodo, @aperturaID)";
+                using (var cmd = new SQLiteCommand(queryInsert, cn, tx)) {
                     cmd.Parameters.AddWithValue("@motivo", movimientoCaja.Motivo);
                     cmd.Parameters.AddWithValue("@tipo", movimientoCaja.Tipo);
                     cmd.Parameters.AddWithValue("@monto", movimientoCaja.Monto);
                     cmd.Parameters.AddWithValue("@metodo", movimientoCaja.Metodo);
                     cmd.Parameters.AddWithValue("@aperturaID", movimientoCaja.AperturaID);
-                    return cmd.ExecuteNonQuery() > 0;
+                    cmd.ExecuteNonQuery();
                 }
+
+                // 2. Actualizar el saldo correspondiente en la tabla Cajas
+
+                string columna = "";
+
+                switch (movimientoCaja.Metodo) {
+                    case "Efectivo":
+                        columna = "SaldoEfectivo";
+                        break;
+                    case "Debito":
+                        columna = "SaldoDebito";
+                        break;
+                    case "Transferencia":
+                        columna = "SaldoTransferencia";
+                        break;
+                }
+
+                if (!string.IsNullOrEmpty(columna)) {
+                    string operador = movimientoCaja.Tipo == "Ingreso" ? "+" : "-";
+                    string queryUpdate = $@"UPDATE Cajas 
+                                    SET {columna} = {columna} {operador} @monto 
+                                    WHERE AperturaID = @aperturaID";
+                    using (var cmd = new SQLiteCommand(queryUpdate, cn, tx)) {
+                        cmd.Parameters.AddWithValue("@monto", movimientoCaja.Monto);
+                        cmd.Parameters.AddWithValue("@aperturaID", movimientoCaja.AperturaID);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                tx.Commit();
+                return true;
             } catch {
+                tx?.Rollback();
                 return false;
             } finally {
                 cn?.Close();
             }
         }
+
+
 
         // Imprimir MovimientosCaja (asíncrona)
         public async Task<bool> ImprimirMovimientoCajaAsync(int movimientosCajaID) {

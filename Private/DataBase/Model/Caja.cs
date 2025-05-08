@@ -9,5 +9,9 @@ namespace AplicacionCarroComidas.Private.DataBase.Model {
         public int CajaID { get; set; }
         public int AperturaID { get; set; }
         public int? CierreID { get; set; }
+        public double SaldoEfectivo { get; set; } = 0;
+        public double SaldoDebito { get; set; } = 0;
+        public double SaldoTransferencia { get; set; } = 0;
     }
+
 }

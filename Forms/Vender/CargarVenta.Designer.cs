@@ -23,12 +23,14 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CargarVenta));
             this.airForm_FormaPago = new ReaLTaiizor.Forms.AirForm();
             this.parrotButton_Volver = new ReaLTaiizor.Controls.ParrotButton();
             this.hopeCheckBox_ImprimirCoimanda = new ReaLTaiizor.Controls.HopeCheckBox();
             this.parrotButton_Vender = new ReaLTaiizor.Controls.ParrotButton();
             this.hopeComboBox_FormaPago = new ReaLTaiizor.Controls.HopeComboBox();
+            this.timer_Espera = new System.Windows.Forms.Timer(this.components);
             this.airForm_FormaPago.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +54,7 @@
             this.airForm_FormaPago.Sizable = true;
             this.airForm_FormaPago.Size = new System.Drawing.Size(421, 214);
             this.airForm_FormaPago.SmartBounds = true;
-            this.airForm_FormaPago.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
+            this.airForm_FormaPago.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.airForm_FormaPago.TabIndex = 0;
             this.airForm_FormaPago.Text = "Cargar Venta";
             this.airForm_FormaPago.TransparencyKey = System.Drawing.Color.Fuchsia;
@@ -96,7 +98,7 @@
             this.hopeCheckBox_ImprimirCoimanda.EnabledUncheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
             this.hopeCheckBox_ImprimirCoimanda.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hopeCheckBox_ImprimirCoimanda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            this.hopeCheckBox_ImprimirCoimanda.Location = new System.Drawing.Point(96, 126);
+            this.hopeCheckBox_ImprimirCoimanda.Location = new System.Drawing.Point(91, 126);
             this.hopeCheckBox_ImprimirCoimanda.Name = "hopeCheckBox_ImprimirCoimanda";
             this.hopeCheckBox_ImprimirCoimanda.Size = new System.Drawing.Size(220, 20);
             this.hopeCheckBox_ImprimirCoimanda.TabIndex = 5;
@@ -141,6 +143,11 @@
             this.hopeComboBox_FormaPago.Size = new System.Drawing.Size(397, 36);
             this.hopeComboBox_FormaPago.TabIndex = 2;
             // 
+            // timer_Espera
+            // 
+            this.timer_Espera.Enabled = true;
+            this.timer_Espera.Interval = 8000;
+            // 
             // CargarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +160,7 @@
             this.Name = "CargarVenta";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CargarVenta";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.airForm_FormaPago.ResumeLayout(false);
@@ -168,5 +176,6 @@
         private ReaLTaiizor.Controls.ParrotButton parrotButton_Vender;
         private ReaLTaiizor.Controls.ParrotButton parrotButton_Volver;
         private ReaLTaiizor.Controls.HopeCheckBox hopeCheckBox_ImprimirCoimanda;
+        private System.Windows.Forms.Timer timer_Espera;
     }
 }

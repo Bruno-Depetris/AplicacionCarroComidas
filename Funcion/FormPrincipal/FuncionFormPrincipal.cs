@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AplicacionCarroComidas.Forms.FormCaja;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ using System.Windows.Forms;
 namespace AplicacionCarroComidas.Funcion.FormPrincipal {
     public class FuncionFormPrincipal {
         private static Form formActivo = null;
+
         public static void AbrirFormNuevo(Panel panelContenedor, Form formHijo) {
             if (formActivo != null) {
                 formActivo.Close();

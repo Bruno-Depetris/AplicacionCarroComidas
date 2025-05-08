@@ -126,11 +126,12 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
                                 string productos = reader["Productos"].ToString();
                                 string[] listaProductos = productos.Split('-'); 
 
-                                
+                                DateTime date = DateTime.Now;
                                 string comanda = "******* REPAS *******\n";
                                 comanda += "----------------------\n\n\n";
                                 comanda += "                      \n";
                                 comanda += "                      \n";
+                                comanda += $"{date}\n";
                                 comanda += $"ID: {detalleVentaID}\n";
                                 comanda += "Su pedido:\n";
 
@@ -139,7 +140,7 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
                                     foreach (var comidas in LogicaComida.Instancia.MostrarComida()) {
                                         if (productoNombre == comidas.NombreComida.ToLower()) {
                                             comanda += $"{dato.Trim()}  ${comidas.Precio}\n";
-                                            break; // ya lo encontró, no hace falta seguir buscando
+                                            break; 
                                         }
                                     }
                                 }
@@ -164,7 +165,8 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
 
                                     pd.PrintPage += (sender, e) =>
                                     {
-                                        Font fuente = new Font("Courier New", 11);
+                                        Font fuente = new Font("Lucida Console", 10);
+
                                         float y = 2;
 
                                         Image logoImg = Image.FromFile(Logo);

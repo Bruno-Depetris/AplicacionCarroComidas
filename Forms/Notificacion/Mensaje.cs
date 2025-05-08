@@ -57,7 +57,7 @@ namespace AplicacionCarroComidas.Forms.Notificacion {
 
         // Rutas de sonidos
         string popUno = Path.Combine(Application.StartupPath, "Public/Song", "pop-1-269287.wav");
-        string popDos = Path.Combine(Application.StartupPath, "Public/Song", "pop-on-269286.wav");
+        string popDos = Path.Combine(Application.StartupPath, "Public/Song", "Money.wav");
         string popTres = Path.Combine(Application.StartupPath, "Public/Song", "pop-sound-effect-226110.wav");
         string start = Path.Combine(Application.StartupPath, "Public/Song", "start-13691.wav");
         string archive = Path.Combine(Application.StartupPath, "Public/Song", "achive-sound-132273.wav");

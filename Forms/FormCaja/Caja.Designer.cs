@@ -25,12 +25,17 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Caja));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bigLabel_Estado = new ReaLTaiizor.Controls.BigLabel();
             this.panel_Senializador = new ReaLTaiizor.Controls.Panel();
             this.parrotButton_CerrarCaja = new ReaLTaiizor.Controls.ParrotButton();
             this.hopeTextBox_IngreseCambio = new ReaLTaiizor.Controls.HopeTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label_Efectivo = new System.Windows.Forms.Label();
+            this.label_Transf = new System.Windows.Forms.Label();
+            this.label_Debit = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.panel_Senializador.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -38,18 +43,33 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Controls.Add(this.bigLabel_Estado);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(893, 508);
             this.panel1.TabIndex = 5;
             // 
+            // bigLabel_Estado
+            // 
+            this.bigLabel_Estado.AutoSize = true;
+            this.bigLabel_Estado.BackColor = System.Drawing.Color.Transparent;
+            this.bigLabel_Estado.Font = new System.Drawing.Font("Segoe UI", 25F);
+            this.bigLabel_Estado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.bigLabel_Estado.Location = new System.Drawing.Point(36, 309);
+            this.bigLabel_Estado.Name = "bigLabel_Estado";
+            this.bigLabel_Estado.Size = new System.Drawing.Size(147, 46);
+            this.bigLabel_Estado.TabIndex = 0;
+            this.bigLabel_Estado.Text = "bigLabel";
+            // 
             // panel_Senializador
             // 
-            this.panel_Senializador.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel_Senializador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Senializador.BackColor = System.Drawing.Color.Black;
+            this.panel_Senializador.Controls.Add(this.label_Debit);
+            this.panel_Senializador.Controls.Add(this.label_Transf);
+            this.panel_Senializador.Controls.Add(this.label_Efectivo);
             this.panel_Senializador.Controls.Add(this.parrotButton_CerrarCaja);
             this.panel_Senializador.Controls.Add(this.hopeTextBox_IngreseCambio);
             this.panel_Senializador.Controls.Add(this.label3);
@@ -66,6 +86,7 @@
             // 
             // parrotButton_CerrarCaja
             // 
+            this.parrotButton_CerrarCaja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.parrotButton_CerrarCaja.BackgroundColor = System.Drawing.Color.White;
             this.parrotButton_CerrarCaja.ButtonImage = ((System.Drawing.Image)(resources.GetObject("parrotButton_CerrarCaja.ButtonImage")));
             this.parrotButton_CerrarCaja.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
@@ -87,6 +108,7 @@
             this.parrotButton_CerrarCaja.TextColor = System.Drawing.Color.Black;
             this.parrotButton_CerrarCaja.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.parrotButton_CerrarCaja.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.parrotButton_CerrarCaja.Click += new System.EventHandler(this.parrotButton_CerrarCaja_Click);
             // 
             // hopeTextBox_IngreseCambio
             // 
@@ -97,7 +119,7 @@
             this.hopeTextBox_IngreseCambio.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.hopeTextBox_IngreseCambio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
             this.hopeTextBox_IngreseCambio.Hint = "Cambio";
-            this.hopeTextBox_IngreseCambio.Location = new System.Drawing.Point(311, 28);
+            this.hopeTextBox_IngreseCambio.Location = new System.Drawing.Point(309, 34);
             this.hopeTextBox_IngreseCambio.MaxLength = 32767;
             this.hopeTextBox_IngreseCambio.Multiline = false;
             this.hopeTextBox_IngreseCambio.Name = "hopeTextBox_IngreseCambio";
@@ -111,6 +133,7 @@
             this.hopeTextBox_IngreseCambio.TabIndex = 12;
             this.hopeTextBox_IngreseCambio.TabStop = false;
             this.hopeTextBox_IngreseCambio.UseSystemPasswordChar = false;
+            this.hopeTextBox_IngreseCambio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hopeTextBox_IngreseCambio_KeyPress);
             // 
             // label3
             // 
@@ -145,6 +168,39 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Total Efectivo: $";
             // 
+            // label_Efectivo
+            // 
+            this.label_Efectivo.AutoSize = true;
+            this.label_Efectivo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Efectivo.ForeColor = System.Drawing.Color.White;
+            this.label_Efectivo.Location = new System.Drawing.Point(128, 5);
+            this.label_Efectivo.Name = "label_Efectivo";
+            this.label_Efectivo.Size = new System.Drawing.Size(17, 20);
+            this.label_Efectivo.TabIndex = 14;
+            this.label_Efectivo.Text = "0";
+            // 
+            // label_Transf
+            // 
+            this.label_Transf.AutoSize = true;
+            this.label_Transf.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Transf.ForeColor = System.Drawing.Color.White;
+            this.label_Transf.Location = new System.Drawing.Point(168, 34);
+            this.label_Transf.Name = "label_Transf";
+            this.label_Transf.Size = new System.Drawing.Size(17, 20);
+            this.label_Transf.TabIndex = 15;
+            this.label_Transf.Text = "0";
+            // 
+            // label_Debit
+            // 
+            this.label_Debit.AutoSize = true;
+            this.label_Debit.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Debit.ForeColor = System.Drawing.Color.White;
+            this.label_Debit.Location = new System.Drawing.Point(121, 68);
+            this.label_Debit.Name = "label_Debit";
+            this.label_Debit.Size = new System.Drawing.Size(17, 20);
+            this.label_Debit.TabIndex = 16;
+            this.label_Debit.Text = "0";
+            // 
             // Caja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +212,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Caja";
             this.Text = "Caja";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel_Senializador.ResumeLayout(false);
             this.panel_Senializador.PerformLayout();
             this.ResumeLayout(false);
@@ -171,5 +229,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private ReaLTaiizor.Controls.BigLabel bigLabel_Estado;
+        private System.Windows.Forms.Label label_Debit;
+        private System.Windows.Forms.Label label_Transf;
+        private System.Windows.Forms.Label label_Efectivo;
     }
 }
