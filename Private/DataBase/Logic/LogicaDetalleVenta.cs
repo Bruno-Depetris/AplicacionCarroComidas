@@ -44,6 +44,80 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
             return tabla;
         }
 
+        //Mostrar DetalleVenta (por fechas)
+        public DataTable ObtenerVistaDetalleVenta(DateTime fechaDesde, DateTime fechaHasta)
+        {
+            var tabla = new DataTable();
+            SQLiteConnection cn = null;
+            try
+            {
+                cn = Conectar.ObtenerConexion();
+                string query = @"
+            SELECT DetalleVentaID, 
+                   MedioPago, 
+                   Productos, 
+                   Total, 
+                   Fecha || ' ' || Hora AS FechaCompleta
+            FROM VistaVentasDetalladas 
+            WHERE Fecha BETWEEN @desde AND @hasta";
+
+                using (var cmd = new SQLiteCommand(query, cn))
+                {
+                    cmd.Parameters.AddWithValue("@desde", fechaDesde.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@hasta", fechaHasta.ToString("yyyy-MM-dd"));
+                    using (var da = new SQLiteDataAdapter(cmd))
+                    {
+                        da.Fill(tabla);
+                    }
+                }
+            }
+            catch
+            {
+                // Manejo de errores personalizado si querés
+            }
+            finally
+            {
+                cn?.Close();
+            }
+            return tabla;
+        }
+
+        //Mostrar ultimas 10 ventas
+        public DataTable ObtenerUltimasVentas(int cantidad = 10)
+        {
+            var tabla = new DataTable();
+            SQLiteConnection cn = null;
+            try
+            {
+                cn = Conectar.ObtenerConexion();
+                string query = @"
+            SELECT DetalleVentaID, 
+                   MedioPago, 
+                   Productos, 
+                   Total, 
+                   Fecha || ' ' || Hora AS FechaCompleta
+            FROM VistaVentasDetalladas ORDER BY Fecha DESC LIMIT @cantidad";
+                using (var cmd = new SQLiteCommand(query, cn))
+                {
+                    cmd.Parameters.AddWithValue("@cantidad", cantidad);
+                    using (var da = new SQLiteDataAdapter(cmd))
+                    {
+                        da.Fill(tabla);
+                    }
+                }
+            }
+            catch
+            {
+                // Manejo de errores
+            }
+            finally
+            {
+                cn?.Close();
+            }
+            return tabla;
+        }
+
+
         // Editar DetalleVenta
         public bool EditarDetalleVenta(DetalleVenta detalleVenta) {
             SQLiteConnection cn = null;
