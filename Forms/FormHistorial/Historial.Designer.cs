@@ -23,24 +23,23 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Historial));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Historial));
             this.panel_Senializador = new ReaLTaiizor.Controls.Panel();
-            this.poisonDateTime_Desde = new ReaLTaiizor.Controls.PoisonDateTime();
-            this.poisonDateTime_Hasta = new ReaLTaiizor.Controls.PoisonDateTime();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.poisonDataGridView_HistorialVenta = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.parrotButton_Ventas = new ReaLTaiizor.Controls.ParrotButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.poisonDateTime_Hasta = new ReaLTaiizor.Controls.PoisonDateTime();
+            this.poisonDateTime_Desde = new ReaLTaiizor.Controls.PoisonDateTime();
+            this.poisonDataGridView_HistorialVenta = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.Column_VentaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_FormaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column_Cobrar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column_Imprimir = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel_Senializador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView_HistorialVenta)).BeginInit();
@@ -57,50 +56,81 @@
             this.panel_Senializador.Controls.Add(this.poisonDateTime_Hasta);
             this.panel_Senializador.Controls.Add(this.poisonDateTime_Desde);
             this.panel_Senializador.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panel_Senializador.Location = new System.Drawing.Point(0, -35);
+            this.panel_Senializador.Location = new System.Drawing.Point(0, -43);
+            this.panel_Senializador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel_Senializador.Name = "panel_Senializador";
-            this.panel_Senializador.Padding = new System.Windows.Forms.Padding(5);
-            this.panel_Senializador.Size = new System.Drawing.Size(875, 84);
+            this.panel_Senializador.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.panel_Senializador.Size = new System.Drawing.Size(1167, 103);
             this.panel_Senializador.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel_Senializador.TabIndex = 3;
             this.panel_Senializador.Text = "panel1";
             // 
-            // poisonDateTime_Desde
+            // parrotButton_Ventas
             // 
-            this.poisonDateTime_Desde.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
-            this.poisonDateTime_Desde.Location = new System.Drawing.Point(87, 44);
-            this.poisonDateTime_Desde.MinimumSize = new System.Drawing.Size(0, 29);
-            this.poisonDateTime_Desde.Name = "poisonDateTime_Desde";
-            this.poisonDateTime_Desde.Size = new System.Drawing.Size(200, 29);
-            this.poisonDateTime_Desde.TabIndex = 4;
-            // 
-            // poisonDateTime_Hasta
-            // 
-            this.poisonDateTime_Hasta.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
-            this.poisonDateTime_Hasta.Location = new System.Drawing.Point(466, 44);
-            this.poisonDateTime_Hasta.MinimumSize = new System.Drawing.Size(0, 29);
-            this.poisonDateTime_Hasta.Name = "poisonDateTime_Hasta";
-            this.poisonDateTime_Hasta.Size = new System.Drawing.Size(200, 29);
-            this.poisonDateTime_Hasta.TabIndex = 5;
-            this.poisonDateTime_Hasta.ValueChanged += new System.EventHandler(this.poisonDateTime2_ValueChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Desde";
+            this.parrotButton_Ventas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.parrotButton_Ventas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
+            this.parrotButton_Ventas.ButtonImage = ((System.Drawing.Image)(resources.GetObject("parrotButton_Ventas.ButtonImage")));
+            this.parrotButton_Ventas.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
+            this.parrotButton_Ventas.ButtonText = "";
+            this.parrotButton_Ventas.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.parrotButton_Ventas.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(151)))), ((int)(((byte)(60)))));
+            this.parrotButton_Ventas.CornerRadius = 5;
+            this.parrotButton_Ventas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.parrotButton_Ventas.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.parrotButton_Ventas.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.parrotButton_Ventas.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.parrotButton_Ventas.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
+            this.parrotButton_Ventas.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
+            this.parrotButton_Ventas.Location = new System.Drawing.Point(1087, 44);
+            this.parrotButton_Ventas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.parrotButton_Ventas.Name = "parrotButton_Ventas";
+            this.parrotButton_Ventas.Size = new System.Drawing.Size(64, 59);
+            this.parrotButton_Ventas.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.parrotButton_Ventas.TabIndex = 7;
+            this.parrotButton_Ventas.TextColor = System.Drawing.Color.Black;
+            this.parrotButton_Ventas.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotButton_Ventas.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(422, 51);
+            this.label2.Location = new System.Drawing.Point(563, 63);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(43, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Hasta";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(55, 63);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 16);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Desde";
+            // 
+            // poisonDateTime_Hasta
+            // 
+            this.poisonDateTime_Hasta.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
+            this.poisonDateTime_Hasta.Location = new System.Drawing.Point(621, 54);
+            this.poisonDateTime_Hasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.poisonDateTime_Hasta.MinimumSize = new System.Drawing.Size(0, 30);
+            this.poisonDateTime_Hasta.Name = "poisonDateTime_Hasta";
+            this.poisonDateTime_Hasta.Size = new System.Drawing.Size(265, 30);
+            this.poisonDateTime_Hasta.TabIndex = 5;
+            this.poisonDateTime_Hasta.ValueChanged += new System.EventHandler(this.poisonDateTime2_ValueChanged);
+            // 
+            // poisonDateTime_Desde
+            // 
+            this.poisonDateTime_Desde.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
+            this.poisonDateTime_Desde.Location = new System.Drawing.Point(116, 54);
+            this.poisonDateTime_Desde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.poisonDateTime_Desde.MinimumSize = new System.Drawing.Size(0, 30);
+            this.poisonDateTime_Desde.Name = "poisonDateTime_Desde";
+            this.poisonDateTime_Desde.Size = new System.Drawing.Size(265, 30);
+            this.poisonDateTime_Desde.TabIndex = 4;
             // 
             // poisonDataGridView_HistorialVenta
             // 
@@ -129,7 +159,6 @@
             this.Column_Pedido,
             this.Column_Total,
             this.Column_Eliminar,
-            this.Column_Cobrar,
             this.Column_Imprimir});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -142,7 +171,8 @@
             this.poisonDataGridView_HistorialVenta.EnableHeadersVisualStyles = false;
             this.poisonDataGridView_HistorialVenta.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.poisonDataGridView_HistorialVenta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.poisonDataGridView_HistorialVenta.Location = new System.Drawing.Point(0, 55);
+            this.poisonDataGridView_HistorialVenta.Location = new System.Drawing.Point(0, 68);
+            this.poisonDataGridView_HistorialVenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.poisonDataGridView_HistorialVenta.Name = "poisonDataGridView_HistorialVenta";
             this.poisonDataGridView_HistorialVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -154,65 +184,46 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.poisonDataGridView_HistorialVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.poisonDataGridView_HistorialVenta.RowHeadersVisible = false;
+            this.poisonDataGridView_HistorialVenta.RowHeadersWidth = 51;
             this.poisonDataGridView_HistorialVenta.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.poisonDataGridView_HistorialVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.poisonDataGridView_HistorialVenta.Size = new System.Drawing.Size(875, 432);
+            this.poisonDataGridView_HistorialVenta.Size = new System.Drawing.Size(1167, 532);
             this.poisonDataGridView_HistorialVenta.TabIndex = 8;
-            // 
-            // parrotButton_Ventas
-            // 
-            this.parrotButton_Ventas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.parrotButton_Ventas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
-            this.parrotButton_Ventas.ButtonImage = ((System.Drawing.Image)(resources.GetObject("parrotButton_Ventas.ButtonImage")));
-            this.parrotButton_Ventas.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
-            this.parrotButton_Ventas.ButtonText = "";
-            this.parrotButton_Ventas.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.parrotButton_Ventas.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(151)))), ((int)(((byte)(60)))));
-            this.parrotButton_Ventas.CornerRadius = 5;
-            this.parrotButton_Ventas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.parrotButton_Ventas.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.parrotButton_Ventas.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.parrotButton_Ventas.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.parrotButton_Ventas.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
-            this.parrotButton_Ventas.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            this.parrotButton_Ventas.Location = new System.Drawing.Point(815, 36);
-            this.parrotButton_Ventas.Name = "parrotButton_Ventas";
-            this.parrotButton_Ventas.Size = new System.Drawing.Size(48, 48);
-            this.parrotButton_Ventas.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.parrotButton_Ventas.TabIndex = 7;
-            this.parrotButton_Ventas.TextColor = System.Drawing.Color.Black;
-            this.parrotButton_Ventas.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotButton_Ventas.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             // 
             // Column_VentaID
             // 
             this.Column_VentaID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column_VentaID.HeaderText = "VentaID";
+            this.Column_VentaID.MinimumWidth = 6;
             this.Column_VentaID.Name = "Column_VentaID";
             // 
             // Column_Fecha
             // 
             this.Column_Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column_Fecha.HeaderText = "Fecha";
+            this.Column_Fecha.MinimumWidth = 6;
             this.Column_Fecha.Name = "Column_Fecha";
             // 
             // Column_FormaPago
             // 
             this.Column_FormaPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Column_FormaPago.HeaderText = "Forma Pago";
+            this.Column_FormaPago.MinimumWidth = 6;
             this.Column_FormaPago.Name = "Column_FormaPago";
-            this.Column_FormaPago.Width = 91;
+            this.Column_FormaPago.Width = 98;
             // 
             // Column_Pedido
             // 
             this.Column_Pedido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column_Pedido.HeaderText = "Pedido";
+            this.Column_Pedido.MinimumWidth = 6;
             this.Column_Pedido.Name = "Column_Pedido";
             // 
             // Column_Total
             // 
             this.Column_Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column_Total.HeaderText = "Total";
+            this.Column_Total.MinimumWidth = 6;
             this.Column_Total.Name = "Column_Total";
             // 
             // Column_Eliminar
@@ -221,35 +232,29 @@
             this.Column_Eliminar.HeaderText = "Eliminar";
             this.Column_Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Column_Eliminar.Image")));
             this.Column_Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column_Eliminar.MinimumWidth = 6;
             this.Column_Eliminar.Name = "Column_Eliminar";
-            // 
-            // Column_Cobrar
-            // 
-            this.Column_Cobrar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column_Cobrar.HeaderText = "Cobrar";
-            this.Column_Cobrar.Image = ((System.Drawing.Image)(resources.GetObject("Column_Cobrar.Image")));
-            this.Column_Cobrar.Name = "Column_Cobrar";
-            this.Column_Cobrar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column_Cobrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Column_Imprimir
             // 
             this.Column_Imprimir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column_Imprimir.HeaderText = "Imprimir";
             this.Column_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("Column_Imprimir.Image")));
+            this.Column_Imprimir.MinimumWidth = 6;
             this.Column_Imprimir.Name = "Column_Imprimir";
             this.Column_Imprimir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column_Imprimir.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Historial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(875, 487);
+            this.ClientSize = new System.Drawing.Size(1167, 599);
             this.Controls.Add(this.poisonDataGridView_HistorialVenta);
             this.Controls.Add(this.panel_Senializador);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Historial";
             this.Text = "Historial";
             this.panel_Senializador.ResumeLayout(false);
@@ -274,7 +279,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Pedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Total;
         private System.Windows.Forms.DataGridViewImageColumn Column_Eliminar;
-        private System.Windows.Forms.DataGridViewImageColumn Column_Cobrar;
         private System.Windows.Forms.DataGridViewImageColumn Column_Imprimir;
     }
 }

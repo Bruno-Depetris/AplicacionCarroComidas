@@ -112,6 +112,8 @@
     <Compile Include="Forms\Vender\Vender.Designer.cs">
       <DependentUpon>Vender.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcion\FormHistorial\FuncionEliminar.cs" />
+    <Compile Include="Funcion\FormHistorial\FuncionMostrar.cs" />
     <Compile Include="Funcion\FormPrincipal\FuncionFormPrincipal.cs" />
     <Compile Include="Funcion\FormVender\FuncionEditar.cs" />
     <Compile Include="Funcion\FormVender\FuncionVender.cs" />
