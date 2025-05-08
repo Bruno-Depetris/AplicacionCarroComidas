@@ -6,8 +6,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,30 +20,60 @@ namespace AplicacionCarroComidas.Forms.FormHistorial {
             InitializeComponent();
             poisonDateTime_Hasta.Text = DateTime.Now.ToString("dd/MM/yyyy");
             poisonDateTime_Desde.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            poisonDataGridView_HistorialVenta.CellContentClick += poisonDataGridView_HistorialVenta_CellContentClick;
 
         }
 
         private void poisonDateTime2_ValueChanged(object sender, EventArgs e) {
 
         }
-        private void Imprimir(int rowIndex) {
+        private void Borrar(int rowIndex) {
+            if (rowIndex < 0 || rowIndex >= poisonDataGridView_HistorialVenta.Rows.Count) {
+                MessageBox.Show("Índice fuera de rango", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var seleccionarRow = poisonDataGridView_HistorialVenta.Rows[rowIndex];
-            var confirm = MessageBox.Show("¿Está seguro que desea imprimir?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             int detalleVentaID = Convert.ToInt32(seleccionarRow.Cells[0].Value);
+
+            MovimientoCaja mov = new MovimientoCaja();
+
+            mov.AperturaID = LogicaApertura.Instancia.ObtenerUltimaAperturaId();
+            string valorTexto = seleccionarRow.Cells[3].Value.ToString();
+
+            // Elimina todo lo que no sea número, coma o punto
+            string valorLimpio = Regex.Replace(valorTexto, @"[^\d.,-]", "");
+
+            // Intenta convertir usando culturas que entiendan "," o "."
+            if (double.TryParse(valorLimpio, NumberStyles.Any, CultureInfo.CurrentCulture, out double monto) ||
+                double.TryParse(valorLimpio, NumberStyles.Any, CultureInfo.InvariantCulture, out monto)) {
+                mov.Monto = monto;
+            } else {
+                MessageBox.Show("Error al interpretar el monto: " + valorTexto);
+            }
+
+
+            mov.Metodo = seleccionarRow.Cells[1].Value.ToString();
+            mov.Motivo = $"Eliminar venta {detalleVentaID}";
+            mov.Tipo = "Egreso";
+
+            Console.Write(mov.Monto);
+            var confirm = MessageBox.Show("¿Está seguro que desea eliminar esta venta del historial?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            
             if (confirm == DialogResult.Yes) {
                 FuncionEliminar.EliminarHistorial(detalleVentaID);
-                CargarHistorial();
+                LogicaMovimientosCaja.Instancia.CargarMovimientoCaja(mov);
             }
+            CargarHistorial();
+            
         }
-        private void Borrar(int rowIndex) {
+        private void Imprimir(int rowIndex) {
             var seleccionarRow = poisonDataGridView_HistorialVenta.Rows[rowIndex];
-            var confirm = MessageBox.Show("¿Está seguro que desea eliminar esta venta del historial?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            var confirm = MessageBox.Show("¿Está seguro que desea Imprimir?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             int detalleVentaID = Convert.ToInt32(seleccionarRow.Cells[0].Value);
             if (confirm == DialogResult.Yes) {
                 LogicaDetalleVenta.Instancia.ImprimirDetalleVentaAsync(detalleVentaID);
-                CargarHistorial();
+             
             }
+            CargarHistorial();
         }
         private void poisonDataGridView_HistorialVenta_CellContentClick(object sender, DataGridViewCellEventArgs e) {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0) {
@@ -57,22 +89,8 @@ namespace AplicacionCarroComidas.Forms.FormHistorial {
 
                 }
             }
-            /*
-            if (e.RowIndex < 0) return;
 
-            var grid = poisonDataGridView_HistorialVenta;
-
-            int detalleVentaID = Convert.ToInt32(grid.Rows[e.RowIndex].Cells["DetalleVentaID"].Value);
-
-            if (grid.Columns[e.ColumnIndex].Name == "Eliminar") {
-                
-            }
-
-
-            if (grid.Columns[e.ColumnIndex].Name == "Imprimir") {
-               
-            }
-            */
+            
         }
 
         private void Historial_Load(object sender, EventArgs e) {

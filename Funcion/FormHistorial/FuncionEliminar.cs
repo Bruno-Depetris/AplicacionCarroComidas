@@ -12,6 +12,8 @@ namespace AplicacionCarroComidas.Funcion.FormHistorial {
             try {
 
                 LogicaDetalleVenta.Instancia.BorrarDetalleVenta(detalleVentaID);
+ 
+
 
             } catch (Exception ex) {
                 MessageBox.Show("Error al eliminar el historial: " + ex.Message);

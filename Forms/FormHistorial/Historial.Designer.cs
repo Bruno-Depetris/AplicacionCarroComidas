@@ -35,7 +35,6 @@
             this.poisonDateTime_Desde = new ReaLTaiizor.Controls.PoisonDateTime();
             this.poisonDataGridView_HistorialVenta = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.Column_VentaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_FormaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -149,7 +148,6 @@
             this.poisonDataGridView_HistorialVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.poisonDataGridView_HistorialVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column_VentaID,
-            this.Column_Fecha,
             this.Column_FormaPago,
             this.Column_Pedido,
             this.Column_Total,
@@ -187,31 +185,28 @@
             // Column_VentaID
             // 
             this.Column_VentaID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_VentaID.FillWeight = 16.89189F;
             this.Column_VentaID.HeaderText = "VentaID";
             this.Column_VentaID.Name = "Column_VentaID";
             // 
-            // Column_Fecha
-            // 
-            this.Column_Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column_Fecha.HeaderText = "Fecha";
-            this.Column_Fecha.Name = "Column_Fecha";
-            // 
             // Column_FormaPago
             // 
-            this.Column_FormaPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column_FormaPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_FormaPago.FillWeight = 16.89189F;
             this.Column_FormaPago.HeaderText = "Forma Pago";
             this.Column_FormaPago.Name = "Column_FormaPago";
-            this.Column_FormaPago.Width = 91;
             // 
             // Column_Pedido
             // 
             this.Column_Pedido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_Pedido.FillWeight = 120F;
             this.Column_Pedido.HeaderText = "Pedido";
             this.Column_Pedido.Name = "Column_Pedido";
             // 
             // Column_Total
             // 
             this.Column_Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_Total.FillWeight = 16.89189F;
             this.Column_Total.HeaderText = "Total";
             this.Column_Total.Name = "Column_Total";
             // 
@@ -227,6 +222,7 @@
             // Column_Imprimir
             // 
             this.Column_Imprimir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column_Imprimir.FillWeight = 16.89189F;
             this.Column_Imprimir.HeaderText = "Imprimir";
             this.Column_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("Column_Imprimir.Image")));
             this.Column_Imprimir.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
@@ -261,7 +257,6 @@
         private ReaLTaiizor.Controls.PoisonDataGridView poisonDataGridView_HistorialVenta;
         private ReaLTaiizor.Controls.ParrotButton parrotButton_Actualizar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_VentaID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_FormaPago;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Pedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Total;

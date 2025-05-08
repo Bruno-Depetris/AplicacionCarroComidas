@@ -29,8 +29,19 @@ namespace AplicacionCarroComidas.Funcion.FormHistorial {
         }
 
         public static void MostrarUltimasVentas(DataGridView dgv) {
+            dgv.Rows.Clear();
+            int id = LogicaApertura.Instancia.ObtenerUltimaAperturaId();
+            var Historial = LogicaDetalleVenta.Instancia.MostrarDetalleVenta(id);
+
+            foreach (var dato in Historial) {
+                dgv.Rows.Add( dato.DetalleVentaID, dato.MedioPago, dato.Productos, dato.Total.ToString("C", new System.Globalization.CultureInfo("es-AR")));
+            }
+
+
+
+            /*
             try {
-                int id = LogicaApertura.Instancia.ObtenerUltimaAperturaId();
+                
                 dgv.Rows.Clear();
                 List<DetalleVenta> lista = LogicaDetalleVenta.Instancia.MostrarDetalleVenta(id);
 
@@ -47,6 +58,7 @@ namespace AplicacionCarroComidas.Funcion.FormHistorial {
             } catch (Exception ex) {
                 MessageBox.Show("Error al cargar últimas ventas: " + ex.Message);
             }
+            */
         }
     }
 }
