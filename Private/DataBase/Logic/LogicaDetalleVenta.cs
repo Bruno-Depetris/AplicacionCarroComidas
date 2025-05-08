@@ -23,25 +23,86 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
             }
         }
 
-        // Mostrar DetalleVenta (muestra todos los detalles de una venta por AperturaID)
-        public DataTable MostrarDetalleVenta(int aperturaID) {
-            var tabla = new DataTable();
+        public List<DetalleVenta> ObtenerVistaDetalleVentaBetween(DateTime fechaDesde, DateTime fechaHasta, int id) {
+            var lista = new List<DetalleVenta>();
             SQLiteConnection cn = null;
+
             try {
                 cn = Conectar.ObtenerConexion();
-                string query = "SELECT * FROM DetallesVentas WHERE AperturaID = @aperturaID";
+                string query = @"
+            SELECT DetalleVentaID, 
+                   MedioPago, 
+                   Productos, 
+                   Total, 
+                   AperturaID
+            FROM VistaVentasDetalladas 
+            WHERE Fecha BETWEEN @desde AND @hasta
+              AND AperturaID = @aperturaId";
+
                 using (var cmd = new SQLiteCommand(query, cn)) {
-                    cmd.Parameters.AddWithValue("@aperturaID", aperturaID);
-                    using (var da = new SQLiteDataAdapter(cmd)) {
-                        da.Fill(tabla);
+                    cmd.Parameters.AddWithValue("@desde", fechaDesde.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@hasta", fechaHasta.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@aperturaId", id);
+
+                    using (var reader = cmd.ExecuteReader()) {
+                        while (reader.Read()) {
+                            var detalle = new DetalleVenta {
+                                DetalleVentaID = Convert.ToInt32(reader["DetalleVentaID"]),
+                                MedioPago = reader["MedioPago"].ToString() ?? "",
+                                Productos = reader["Productos"].ToString() ?? "",
+                                Total = Convert.ToDouble(reader["Total"]),
+                                AperturaID = Convert.ToInt32(reader["AperturaID"])
+                            };
+                            lista.Add(detalle);
+                        }
                     }
                 }
             } catch {
-                // Manejo de errores (puedes personalizarlo)
+                // Agregar logs si querés
             } finally {
                 cn?.Close();
             }
-            return tabla;
+
+            return lista;
+        }
+        public List<DetalleVenta> MostrarDetalleVenta(int aperturaID) {
+            var lista = new List<DetalleVenta>();
+            SQLiteConnection cn = null;
+
+            try {
+                cn = Conectar.ObtenerConexion();
+                string query = @"
+            SELECT DetalleVentaID, 
+                   MedioPago, 
+                   Productos, 
+                   Total, 
+                   AperturaID
+            FROM DetallesVentas
+            WHERE AperturaID = @aperturaID";
+
+                using (var cmd = new SQLiteCommand(query, cn)) {
+                    cmd.Parameters.AddWithValue("@aperturaID", aperturaID);
+
+                    using (var reader = cmd.ExecuteReader()) {
+                        while (reader.Read()) {
+                            var detalle = new DetalleVenta {
+                                DetalleVentaID = Convert.ToInt32(reader["DetalleVentaID"]),
+                                MedioPago = reader["MedioPago"].ToString() ?? "",
+                                Productos = reader["Productos"].ToString() ?? "",
+                                Total = Convert.ToDouble(reader["Total"]),
+                                AperturaID = Convert.ToInt32(reader["AperturaID"])
+                            };
+                            lista.Add(detalle);
+                        }
+                    }
+                }
+            } catch {
+                // Agregar logs si querés
+            } finally {
+                cn?.Close();
+            }
+
+            return lista;
         }
 
         // Editar DetalleVenta
