@@ -25,7 +25,7 @@ namespace AplicacionCarroComidas.Forms.FormMovimientos
         {
             InitializeComponent();
             _formCaja = formCaja;
-           
+            
         }
 
         private void ValidarEstadocaja()
