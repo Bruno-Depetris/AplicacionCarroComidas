@@ -24,16 +24,16 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Movimientos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_Senializador = new ReaLTaiizor.Controls.Panel();
+            this.hopeTextBox_Monto = new ReaLTaiizor.Controls.HopeTextBox();
             this.parrotButton_CargarMovimiento = new ReaLTaiizor.Controls.ParrotButton();
             this.hopeRichTextBox_Motivo = new ReaLTaiizor.Controls.HopeRichTextBox();
             this.hopeComboBox_Medio = new ReaLTaiizor.Controls.HopeComboBox();
             this.hopeComboBox_TipoMovimiento = new ReaLTaiizor.Controls.HopeComboBox();
             this.poisonDataGridView_HistorialMovimientos = new ReaLTaiizor.Controls.PoisonDataGridView();
-            this.hopeTextBox_Monto = new ReaLTaiizor.Controls.HopeTextBox();
             this.Column_MovimientoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Accion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,14 +54,37 @@
             this.panel_Senializador.Controls.Add(this.hopeComboBox_Medio);
             this.panel_Senializador.Controls.Add(this.hopeComboBox_TipoMovimiento);
             this.panel_Senializador.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panel_Senializador.Location = new System.Drawing.Point(16, 363);
-            this.panel_Senializador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_Senializador.Location = new System.Drawing.Point(12, 295);
             this.panel_Senializador.Name = "panel_Senializador";
-            this.panel_Senializador.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.panel_Senializador.Size = new System.Drawing.Size(1101, 216);
+            this.panel_Senializador.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel_Senializador.Size = new System.Drawing.Size(826, 176);
             this.panel_Senializador.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.panel_Senializador.TabIndex = 4;
             this.panel_Senializador.Text = "panel1";
+            // 
+            // hopeTextBox_Monto
+            // 
+            this.hopeTextBox_Monto.BackColor = System.Drawing.Color.White;
+            this.hopeTextBox_Monto.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.hopeTextBox_Monto.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.hopeTextBox_Monto.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.hopeTextBox_Monto.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.hopeTextBox_Monto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.hopeTextBox_Monto.Hint = "ingrese monto";
+            this.hopeTextBox_Monto.Location = new System.Drawing.Point(9, 72);
+            this.hopeTextBox_Monto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hopeTextBox_Monto.MaxLength = 32767;
+            this.hopeTextBox_Monto.Multiline = false;
+            this.hopeTextBox_Monto.Name = "hopeTextBox_Monto";
+            this.hopeTextBox_Monto.PasswordChar = '\0';
+            this.hopeTextBox_Monto.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.hopeTextBox_Monto.SelectedText = "";
+            this.hopeTextBox_Monto.SelectionLength = 0;
+            this.hopeTextBox_Monto.SelectionStart = 0;
+            this.hopeTextBox_Monto.Size = new System.Drawing.Size(728, 38);
+            this.hopeTextBox_Monto.TabIndex = 9;
+            this.hopeTextBox_Monto.TabStop = false;
+            this.hopeTextBox_Monto.UseSystemPasswordChar = false;
             // 
             // parrotButton_CargarMovimiento
             // 
@@ -79,10 +102,9 @@
             this.parrotButton_CargarMovimiento.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.parrotButton_CargarMovimiento.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(111)))), ((int)(((byte)(26)))));
             this.parrotButton_CargarMovimiento.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            this.parrotButton_CargarMovimiento.Location = new System.Drawing.Point(963, 78);
-            this.parrotButton_CargarMovimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.parrotButton_CargarMovimiento.Location = new System.Drawing.Point(743, 95);
             this.parrotButton_CargarMovimiento.Name = "parrotButton_CargarMovimiento";
-            this.parrotButton_CargarMovimiento.Size = new System.Drawing.Size(100, 90);
+            this.parrotButton_CargarMovimiento.Size = new System.Drawing.Size(75, 73);
             this.parrotButton_CargarMovimiento.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.parrotButton_CargarMovimiento.TabIndex = 8;
             this.parrotButton_CargarMovimiento.TextColor = System.Drawing.Color.Black;
@@ -97,10 +119,9 @@
             this.hopeRichTextBox_Motivo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
             this.hopeRichTextBox_Motivo.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.hopeRichTextBox_Motivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            this.hopeRichTextBox_Motivo.Hint = " Ingrese motivo";
+            this.hopeRichTextBox_Motivo.Hint = "Ingresar Motivo";
             this.hopeRichTextBox_Motivo.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.hopeRichTextBox_Motivo.Location = new System.Drawing.Point(11, 117);
-            this.hopeRichTextBox_Motivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.hopeRichTextBox_Motivo.Location = new System.Drawing.Point(8, 124);
             this.hopeRichTextBox_Motivo.MaxLength = 32767;
             this.hopeRichTextBox_Motivo.Multiline = true;
             this.hopeRichTextBox_Motivo.Name = "hopeRichTextBox_Motivo";
@@ -109,7 +130,7 @@
             this.hopeRichTextBox_Motivo.SelectedText = "";
             this.hopeRichTextBox_Motivo.SelectionLength = 0;
             this.hopeRichTextBox_Motivo.SelectionStart = 0;
-            this.hopeRichTextBox_Motivo.Size = new System.Drawing.Size(916, 90);
+            this.hopeRichTextBox_Motivo.Size = new System.Drawing.Size(729, 44);
             this.hopeRichTextBox_Motivo.TabIndex = 5;
             this.hopeRichTextBox_Motivo.TabStop = false;
             this.hopeRichTextBox_Motivo.UseSystemPasswordChar = false;
@@ -123,10 +144,9 @@
             this.hopeComboBox_Medio.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.hopeComboBox_Medio.FormattingEnabled = true;
             this.hopeComboBox_Medio.ItemHeight = 30;
-            this.hopeComboBox_Medio.Location = new System.Drawing.Point(527, 26);
-            this.hopeComboBox_Medio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.hopeComboBox_Medio.Location = new System.Drawing.Point(395, 21);
             this.hopeComboBox_Medio.Name = "hopeComboBox_Medio";
-            this.hopeComboBox_Medio.Size = new System.Drawing.Size(563, 36);
+            this.hopeComboBox_Medio.Size = new System.Drawing.Size(423, 36);
             this.hopeComboBox_Medio.TabIndex = 1;
             // 
             // hopeComboBox_TipoMovimiento
@@ -139,10 +159,9 @@
             this.hopeComboBox_TipoMovimiento.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.hopeComboBox_TipoMovimiento.FormattingEnabled = true;
             this.hopeComboBox_TipoMovimiento.ItemHeight = 30;
-            this.hopeComboBox_TipoMovimiento.Location = new System.Drawing.Point(11, 26);
-            this.hopeComboBox_TipoMovimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.hopeComboBox_TipoMovimiento.Location = new System.Drawing.Point(8, 21);
             this.hopeComboBox_TipoMovimiento.Name = "hopeComboBox_TipoMovimiento";
-            this.hopeComboBox_TipoMovimiento.Size = new System.Drawing.Size(507, 36);
+            this.hopeComboBox_TipoMovimiento.Size = new System.Drawing.Size(381, 36);
             this.hopeComboBox_TipoMovimiento.TabIndex = 0;
             // 
             // poisonDataGridView_HistorialMovimientos
@@ -156,14 +175,14 @@
             this.poisonDataGridView_HistorialMovimientos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.poisonDataGridView_HistorialMovimientos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.poisonDataGridView_HistorialMovimientos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView_HistorialMovimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.poisonDataGridView_HistorialMovimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.poisonDataGridView_HistorialMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.poisonDataGridView_HistorialMovimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column_MovimientoID,
@@ -171,58 +190,34 @@
             this.Column_Accion,
             this.Column_Monto,
             this.Column_Medio});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.poisonDataGridView_HistorialMovimientos.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.poisonDataGridView_HistorialMovimientos.DefaultCellStyle = dataGridViewCellStyle5;
             this.poisonDataGridView_HistorialMovimientos.EnableHeadersVisualStyles = false;
             this.poisonDataGridView_HistorialMovimientos.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.poisonDataGridView_HistorialMovimientos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.poisonDataGridView_HistorialMovimientos.Location = new System.Drawing.Point(13, 13);
-            this.poisonDataGridView_HistorialMovimientos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.poisonDataGridView_HistorialMovimientos.Location = new System.Drawing.Point(10, 11);
             this.poisonDataGridView_HistorialMovimientos.Name = "poisonDataGridView_HistorialMovimientos";
             this.poisonDataGridView_HistorialMovimientos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView_HistorialMovimientos.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.poisonDataGridView_HistorialMovimientos.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.poisonDataGridView_HistorialMovimientos.RowHeadersVisible = false;
             this.poisonDataGridView_HistorialMovimientos.RowHeadersWidth = 51;
             this.poisonDataGridView_HistorialMovimientos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.poisonDataGridView_HistorialMovimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.poisonDataGridView_HistorialMovimientos.Size = new System.Drawing.Size(1101, 342);
+            this.poisonDataGridView_HistorialMovimientos.Size = new System.Drawing.Size(826, 278);
             this.poisonDataGridView_HistorialMovimientos.TabIndex = 9;
-            // 
-            // hopeTextBox_Monto
-            // 
-            this.hopeTextBox_Monto.BackColor = System.Drawing.Color.White;
-            this.hopeTextBox_Monto.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
-            this.hopeTextBox_Monto.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.hopeTextBox_Monto.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.hopeTextBox_Monto.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.hopeTextBox_Monto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            this.hopeTextBox_Monto.Hint = "ingrese monto";
-            this.hopeTextBox_Monto.Location = new System.Drawing.Point(11, 67);
-            this.hopeTextBox_Monto.MaxLength = 32767;
-            this.hopeTextBox_Monto.Multiline = false;
-            this.hopeTextBox_Monto.Name = "hopeTextBox_Monto";
-            this.hopeTextBox_Monto.PasswordChar = '\0';
-            this.hopeTextBox_Monto.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.hopeTextBox_Monto.SelectedText = "";
-            this.hopeTextBox_Monto.SelectionLength = 0;
-            this.hopeTextBox_Monto.SelectionStart = 0;
-            this.hopeTextBox_Monto.Size = new System.Drawing.Size(507, 43);
-            this.hopeTextBox_Monto.TabIndex = 9;
-            this.hopeTextBox_Monto.TabStop = false;
-            this.hopeTextBox_Monto.UseSystemPasswordChar = false;
             // 
             // Column_MovimientoID
             // 
@@ -261,14 +256,13 @@
             // 
             // Movimientos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1133, 594);
+            this.ClientSize = new System.Drawing.Size(850, 483);
             this.Controls.Add(this.poisonDataGridView_HistorialMovimientos);
             this.Controls.Add(this.panel_Senializador);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Movimientos";
             this.Text = "Movimientos";
             this.Load += new System.EventHandler(this.Movimientos_Load);

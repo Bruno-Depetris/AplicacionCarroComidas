@@ -25,7 +25,10 @@ namespace AplicacionCarroComidas.Forms.FormMovimientos
         {
             InitializeComponent();
             _formCaja = formCaja;
-            
+            hopeComboBox_Medio.DropDownStyle = ComboBoxStyle.DropDownList;
+            hopeComboBox_TipoMovimiento.DropDownStyle = ComboBoxStyle.DropDownList;
+
+
         }
 
         private void ValidarEstadocaja()
@@ -49,17 +52,20 @@ namespace AplicacionCarroComidas.Forms.FormMovimientos
 
         public void cargarComboBox()
         {
-            string[] tipomov = { "Ingreso", "Egreso" };
-            string[] formapago = { "Efectivo", "Debito", "Transferencia" };
+            string[] tipomov = { "Seleccionar","Ingreso", "Egreso" };
+            string[] formapago = { "Seleccionar", "Efectivo", "Debito", "Transferencia" };
 
             foreach (var tipo in tipomov)
             {
+
                 hopeComboBox_TipoMovimiento.Items.Add(tipo);
+                hopeComboBox_TipoMovimiento.SelectedIndex = 0;
             }
 
             foreach (var forma in formapago)
             {
                 hopeComboBox_Medio.Items.Add(forma);
+                hopeComboBox_Medio.SelectedIndex = 0;
             }
         }
 
