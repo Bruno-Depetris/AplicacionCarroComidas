@@ -24,9 +24,9 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vender));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label_PrecioGaseosa = new System.Windows.Forms.Label();
             this.Gaseosa = new System.Windows.Forms.Label();
@@ -55,8 +55,6 @@
             this.panel16 = new ReaLTaiizor.Controls.Panel();
             this.parrotPictureBox_Focacia = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.label_PrecioFoccacia = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.panel18 = new ReaLTaiizor.Controls.Panel();
             this.parrotPictureBox_ConoPapasXXL = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.panel19 = new System.Windows.Forms.Panel();
@@ -78,6 +76,10 @@
             this.panel20 = new System.Windows.Forms.Panel();
             this.parrotButton2 = new ReaLTaiizor.Controls.ParrotButton();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.parrotPictureBox1 = new ReaLTaiizor.Controls.ParrotPictureBox();
+            this.label_PrecioFoccacia = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.materialLabel1 = new ReaLTaiizor.Controls.MaterialLabel();
             this.panel2.SuspendLayout();
             this.panel_Senializador.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -89,7 +91,6 @@
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel16.SuspendLayout();
-            this.panel17.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -472,33 +473,11 @@
             // 
             // panel17
             // 
-            this.panel17.Controls.Add(this.label_PrecioFoccacia);
-            this.panel17.Controls.Add(this.label15);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel17.Location = new System.Drawing.Point(5, 118);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(162, 34);
             this.panel17.TabIndex = 1;
-            // 
-            // label_PrecioFoccacia
-            // 
-            this.label_PrecioFoccacia.AutoSize = true;
-            this.label_PrecioFoccacia.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PrecioFoccacia.Location = new System.Drawing.Point(6, 20);
-            this.label_PrecioFoccacia.Name = "label_PrecioFoccacia";
-            this.label_PrecioFoccacia.Size = new System.Drawing.Size(47, 20);
-            this.label_PrecioFoccacia.TabIndex = 23;
-            this.label_PrecioFoccacia.Text = "$1000";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(3, 3);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(108, 17);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "foccacia de vacio";
             // 
             // panel18
             // 
@@ -633,28 +612,28 @@
             this.poisonDataGridView_DetalleVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.poisonDataGridView_DetalleVenta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.poisonDataGridView_DetalleVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView_DetalleVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.poisonDataGridView_DetalleVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.poisonDataGridView_DetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.poisonDataGridView_DetalleVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column_PorductoID,
             this.Column_Producto,
             this.Column_Precio,
             this.Column_Eliminar});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.poisonDataGridView_DetalleVenta.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.poisonDataGridView_DetalleVenta.DefaultCellStyle = dataGridViewCellStyle5;
             this.poisonDataGridView_DetalleVenta.Dock = System.Windows.Forms.DockStyle.Top;
             this.poisonDataGridView_DetalleVenta.EnableHeadersVisualStyles = false;
             this.poisonDataGridView_DetalleVenta.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -662,14 +641,14 @@
             this.poisonDataGridView_DetalleVenta.Location = new System.Drawing.Point(1, 55);
             this.poisonDataGridView_DetalleVenta.Name = "poisonDataGridView_DetalleVenta";
             this.poisonDataGridView_DetalleVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView_DetalleVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.poisonDataGridView_DetalleVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.poisonDataGridView_DetalleVenta.RowHeadersVisible = false;
             this.poisonDataGridView_DetalleVenta.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.poisonDataGridView_DetalleVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -815,6 +794,10 @@
             // 
             // panel12
             // 
+            this.panel12.Controls.Add(this.materialLabel1);
+            this.panel12.Controls.Add(this.label_PrecioFoccacia);
+            this.panel12.Controls.Add(this.label15);
+            this.panel12.Controls.Add(this.parrotPictureBox1);
             this.panel12.Controls.Add(this.parrotButton2);
             this.panel12.Controls.Add(this.panel18);
             this.panel12.Controls.Add(this.panel10);
@@ -828,6 +811,62 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(578, 519);
             this.panel12.TabIndex = 24;
+            // 
+            // parrotPictureBox1
+            // 
+            this.parrotPictureBox1.ColorLeft = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.parrotPictureBox1.ColorRight = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.parrotPictureBox1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotPictureBox1.FilterAlpha = 100;
+            this.parrotPictureBox1.FilterEnabled = true;
+            this.parrotPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("parrotPictureBox1.Image")));
+            this.parrotPictureBox1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotPictureBox1.IsElipse = false;
+            this.parrotPictureBox1.IsParallax = false;
+            this.parrotPictureBox1.Location = new System.Drawing.Point(202, 361);
+            this.parrotPictureBox1.Name = "parrotPictureBox1";
+            this.parrotPictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotPictureBox1.Size = new System.Drawing.Size(172, 158);
+            this.parrotPictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotPictureBox1.TabIndex = 24;
+            this.parrotPictureBox1.Text = "parrotPictureBox1";
+            this.parrotPictureBox1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            // 
+            // label_PrecioFoccacia
+            // 
+            this.label_PrecioFoccacia.AutoSize = true;
+            this.label_PrecioFoccacia.BackColor = System.Drawing.Color.Transparent;
+            this.label_PrecioFoccacia.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PrecioFoccacia.Location = new System.Drawing.Point(209, 499);
+            this.label_PrecioFoccacia.Name = "label_PrecioFoccacia";
+            this.label_PrecioFoccacia.Size = new System.Drawing.Size(47, 20);
+            this.label_PrecioFoccacia.TabIndex = 26;
+            this.label_PrecioFoccacia.Text = "$1000";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(206, 482);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(108, 17);
+            this.label15.TabIndex = 25;
+            this.label15.Text = "foccacia de vacio";
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.H6;
+            this.materialLabel1.Location = new System.Drawing.Point(214, 397);
+            this.materialLabel1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(135, 24);
+            this.materialLabel1.TabIndex = 27;
+            this.materialLabel1.Text = "materialLabel1";
             // 
             // Vender
             // 
@@ -857,8 +896,6 @@
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel16.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            this.panel17.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
@@ -868,6 +905,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -901,8 +939,6 @@
         private ReaLTaiizor.Controls.Panel panel16;
         private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox_Focacia;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Label label_PrecioFoccacia;
-        private System.Windows.Forms.Label label15;
         private ReaLTaiizor.Controls.Panel panel18;
         private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox_ConoPapasXXL;
         private System.Windows.Forms.Panel panel19;
@@ -924,5 +960,9 @@
         private System.Windows.Forms.DataGridViewImageColumn Column_Eliminar;
         private ReaLTaiizor.Controls.ParrotButton parrotButton2;
         private System.Windows.Forms.Panel panel12;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.Label label_PrecioFoccacia;
+        private System.Windows.Forms.Label label15;
+        private ReaLTaiizor.Controls.ParrotPictureBox parrotPictureBox1;
     }
 }
