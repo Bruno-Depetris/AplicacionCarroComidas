@@ -7,12 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AplicacionCarroComidas.Private.DataBase.Logic {
-    public class LogicaMovimientosCaja {
+namespace AplicacionCarroComidas.Private.DataBase.Logic
+{
+    public class LogicaMovimientosCaja
+    {
         private static LogicaMovimientosCaja _instancia;
-        public static LogicaMovimientosCaja Instancia {
-            get {
-                if (_instancia == null) {
+        public static LogicaMovimientosCaja Instancia
+        {
+            get
+            {
+                if (_instancia == null)
+                {
                     _instancia = new LogicaMovimientosCaja();
                 }
                 return _instancia;
@@ -20,33 +25,57 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
         }
 
         // Mostrar MovimientosCaja (muestra todos los movimientos de una apertura)
-        public DataTable MostrarMovimientosCaja(int aperturaID) {
-            var tabla = new DataTable();
+        public List<MovimientoCaja> MostrarMovimientosCaja(int aperturaID)
+        {
+            var lista = new List<MovimientoCaja>();
             SQLiteConnection cn = null;
-            try {
+            try
+            {
                 cn = Conectar.ObtenerConexion();
                 string query = "SELECT * FROM MovimientosCaja WHERE AperturaID = @aperturaID";
-                using (var cmd = new SQLiteCommand(query, cn)) {
+                using (var cmd = new SQLiteCommand(query, cn))
+                {
                     cmd.Parameters.AddWithValue("@aperturaID", aperturaID);
-                    using (var da = new SQLiteDataAdapter(cmd)) {
-                        da.Fill(tabla);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var movimientoCaja = new MovimientoCaja
+                            {
+                                MovimientosCajaID = Convert.ToInt32(reader["MovimientosCajaID"]),
+                                Motivo = reader["Motivo"].ToString() ?? "",
+                                Tipo = reader["Tipo"].ToString() ?? "",
+                                Monto = Convert.ToDouble(reader["Monto"]),
+                                Metodo = reader["Metodo"].ToString() ?? "",
+                                AperturaID = Convert.ToInt32(reader["AperturaID"]),
+                            };
+                            lista.Add(movimientoCaja);
+                        }
                     }
                 }
-            } catch {
+
+            }
+            catch
+            {
                 // Manejo de errores (puedes personalizarlo)
-            } finally {
+            }
+            finally
+            {
                 cn?.Close();
             }
-            return tabla;
+            return lista;
         }
 
         // Editar MovimientosCaja
-        public bool EditarMovimientoCaja(MovimientoCaja movimientoCaja) {
+        public bool EditarMovimientoCaja(MovimientoCaja movimientoCaja)
+        {
             SQLiteConnection cn = null;
-            try {
+            try
+            {
                 cn = Conectar.ObtenerConexion();
                 string query = "UPDATE MovimientosCaja SET Motivo = @motivo, Tipo = @tipo, Monto = @monto, Metodo = @metodo, AperturaID = @aperturaID WHERE MovimientosCajaID = @id";
-                using (var cmd = new SQLiteCommand(query, cn)) {
+                using (var cmd = new SQLiteCommand(query, cn))
+                {
                     cmd.Parameters.AddWithValue("@motivo", movimientoCaja.Motivo);
                     cmd.Parameters.AddWithValue("@tipo", movimientoCaja.Tipo);
                     cmd.Parameters.AddWithValue("@monto", movimientoCaja.Monto);
@@ -55,34 +84,47 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
                     cmd.Parameters.AddWithValue("@id", movimientoCaja.MovimientosCajaID);
                     return cmd.ExecuteNonQuery() > 0;
                 }
-            } catch {
+            }
+            catch
+            {
                 return false;
-            } finally {
+            }
+            finally
+            {
                 cn?.Close();
             }
         }
 
         // Borrar MovimientosCaja
-        public bool BorrarMovimientoCaja(int movimientosCajaID) {
+        public bool BorrarMovimientoCaja(int movimientosCajaID)
+        {
             SQLiteConnection cn = null;
-            try {
+            try
+            {
                 cn = Conectar.ObtenerConexion();
                 string query = "DELETE FROM MovimientosCaja WHERE MovimientosCajaID = @id";
-                using (var cmd = new SQLiteCommand(query, cn)) {
+                using (var cmd = new SQLiteCommand(query, cn))
+                {
                     cmd.Parameters.AddWithValue("@id", movimientosCajaID);
                     return cmd.ExecuteNonQuery() > 0;
                 }
-            } catch {
+            }
+            catch
+            {
                 return false;
-            } finally {
+            }
+            finally
+            {
                 cn?.Close();
             }
         }
         // Cargar MovimientosCaja (Insertar un nuevo movimiento)
-        public bool CargarMovimientoCaja(MovimientoCaja movimientoCaja) {
+        public bool CargarMovimientoCaja(MovimientoCaja movimientoCaja)
+        {
             SQLiteConnection cn = null;
             SQLiteTransaction tx = null;
-            try {
+            try
+            {
                 cn = Conectar.ObtenerConexion();
                 tx = cn.BeginTransaction();
 
@@ -90,7 +132,8 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
                 string queryInsert = @"INSERT INTO MovimientosCaja 
                                (Motivo, Tipo, Monto, Metodo, AperturaID) 
                                VALUES (@motivo, @tipo, @monto, @metodo, @aperturaID)";
-                using (var cmd = new SQLiteCommand(queryInsert, cn, tx)) {
+                using (var cmd = new SQLiteCommand(queryInsert, cn, tx))
+                {
                     cmd.Parameters.AddWithValue("@motivo", movimientoCaja.Motivo);
                     cmd.Parameters.AddWithValue("@tipo", movimientoCaja.Tipo);
                     cmd.Parameters.AddWithValue("@monto", movimientoCaja.Monto);
@@ -103,7 +146,8 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
 
                 string columna = "";
 
-                switch (movimientoCaja.Metodo) {
+                switch (movimientoCaja.Metodo)
+                {
                     case "Efectivo":
                         columna = "SaldoEfectivo";
                         break;
@@ -115,12 +159,14 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
                         break;
                 }
 
-                if (!string.IsNullOrEmpty(columna)) {
+                if (!string.IsNullOrEmpty(columna))
+                {
                     string operador = movimientoCaja.Tipo == "Ingreso" ? "+" : "-";
                     string queryUpdate = $@"UPDATE Cajas 
                                     SET {columna} = {columna} {operador} @monto 
                                     WHERE AperturaID = @aperturaID";
-                    using (var cmd = new SQLiteCommand(queryUpdate, cn, tx)) {
+                    using (var cmd = new SQLiteCommand(queryUpdate, cn, tx))
+                    {
                         cmd.Parameters.AddWithValue("@monto", movimientoCaja.Monto);
                         cmd.Parameters.AddWithValue("@aperturaID", movimientoCaja.AperturaID);
                         cmd.ExecuteNonQuery();
@@ -129,10 +175,14 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
 
                 tx.Commit();
                 return true;
-            } catch {
+            }
+            catch
+            {
                 tx?.Rollback();
                 return false;
-            } finally {
+            }
+            finally
+            {
                 cn?.Close();
             }
         }
@@ -140,15 +190,20 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
 
 
         // Imprimir MovimientosCaja (asíncrona)
-        public async Task<bool> ImprimirMovimientoCajaAsync(int movimientosCajaID) {
+        public async Task<bool> ImprimirMovimientoCajaAsync(int movimientosCajaID)
+        {
             SQLiteConnection cn = null;
-            try {
+            try
+            {
                 cn = Conectar.ObtenerConexion();
                 string query = "SELECT * FROM MovimientosCaja WHERE MovimientosCajaID = @id";
-                using (var cmd = new SQLiteCommand(query, cn)) {
+                using (var cmd = new SQLiteCommand(query, cn))
+                {
                     cmd.Parameters.AddWithValue("@id", movimientosCajaID);
-                    using (var reader = await cmd.ExecuteReaderAsync()) {
-                        if (reader.Read()) {
+                    using (var reader = await cmd.ExecuteReaderAsync())
+                    {
+                        if (reader.Read())
+                        {
                             // Lógica de impresión (dependiendo del tipo de impresión que uses)
                             // Simulación de impresión:
                             Console.WriteLine($"Imprimiendo movimiento de caja {movimientosCajaID}");
@@ -156,9 +211,13 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
                         }
                     }
                 }
-            } catch {
+            }
+            catch
+            {
                 return false;
-            } finally {
+            }
+            finally
+            {
                 cn?.Close();
             }
             return false;

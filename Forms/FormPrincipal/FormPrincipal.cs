@@ -17,12 +17,19 @@ using System.Windows.Forms;
 
 namespace Repas {
     public partial class FormPrincipal : Form {
+        
+        private Caja _formCaja;
+        
+        
         public FormPrincipal() {
             
             InitializeComponent();
             panel_Senializador.Visible = false;
             FuncionFormPrincipal.AbrirFormNuevo(panel_ContenedorFormularios, new Caja(this));
+            _formCaja = new Caja(this);
         }
+
+       
 
         public void ComprobarCaja(bool estado) {
             if (estado == false) {
@@ -44,12 +51,12 @@ namespace Repas {
         }
 
         private void parrotButton_Caja_Click(object sender, EventArgs e) {
-            FuncionFormPrincipal.AbrirFormNuevo(panel_ContenedorFormularios, new Caja(this));
+            FuncionFormPrincipal.AbrirFormNuevo(panel_ContenedorFormularios, _formCaja);
             FuncionFormPrincipal.MoverPanel(parrotButton_Caja, panel_Senializador);
         }
 
         private void parrotButton_Movimiento_Click(object sender, EventArgs e) {
-            FuncionFormPrincipal.AbrirFormNuevo(panel_ContenedorFormularios, new Movimientos());
+            FuncionFormPrincipal.AbrirFormNuevo(panel_ContenedorFormularios, new Movimientos(_formCaja));
             FuncionFormPrincipal.MoverPanel(parrotButton_Movimiento, panel_Senializador);
         }
 
