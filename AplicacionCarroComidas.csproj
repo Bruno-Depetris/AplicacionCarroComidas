@@ -61,7 +61,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -77,6 +77,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\dashboard.Designer.cs">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormCaja\Caja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
     </Compile>
     <Compile Include="Forms\Notificacion\Mensaje.Designer.cs">
       <DependentUpon>Mensaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Vender\AgregarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Vender\AgregarProducto.Designer.cs">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Vender\CargarVenta.cs">
       <SubType>Form</SubType>
@@ -147,6 +159,9 @@
     <Compile Include="Private\RawPrinterHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\dashboard.resx">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCaja\Caja.resx">
       <DependentUpon>Caja.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Notificacion\Mensaje.resx">
       <DependentUpon>Mensaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Vender\AgregarProducto.resx">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Vender\CargarVenta.resx">
       <DependentUpon>CargarVenta.cs</DependentUpon>
@@ -183,7 +201,6 @@
     <Content Include="AplicacionCarroComidasRepas.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="AplicacionCarroComidas_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -441,7 +458,6 @@
   <ItemGroup>
     <Folder Include="bin\" />
     <Folder Include="Caja\" />
-    <Folder Include="Forms\DashBoard\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

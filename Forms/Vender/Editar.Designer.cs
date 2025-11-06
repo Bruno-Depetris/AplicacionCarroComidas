@@ -35,9 +35,9 @@
             // 
             this.airForm1.BackColor = System.Drawing.Color.White;
             this.airForm1.BorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.airForm1.Controls.Add(this.hopeComboBox_Productos);
             this.airForm1.Controls.Add(this.parrotButton_Ventas);
             this.airForm1.Controls.Add(this.hopeTextBox_NuevoPrecio);
-            this.airForm1.Controls.Add(this.hopeComboBox_Productos);
             this.airForm1.Customization = "AAAA/1paWv9ycnL/";
             this.airForm1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.airForm1.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -91,7 +91,7 @@
             this.hopeTextBox_NuevoPrecio.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.hopeTextBox_NuevoPrecio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
             this.hopeTextBox_NuevoPrecio.Hint = "Precio";
-            this.hopeTextBox_NuevoPrecio.Location = new System.Drawing.Point(12, 95);
+            this.hopeTextBox_NuevoPrecio.Location = new System.Drawing.Point(12, 103);
             this.hopeTextBox_NuevoPrecio.MaxLength = 32767;
             this.hopeTextBox_NuevoPrecio.Multiline = false;
             this.hopeTextBox_NuevoPrecio.Name = "hopeTextBox_NuevoPrecio";
@@ -113,10 +113,10 @@
             this.hopeComboBox_Productos.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.hopeComboBox_Productos.FormattingEnabled = true;
             this.hopeComboBox_Productos.ItemHeight = 30;
-            this.hopeComboBox_Productos.Location = new System.Drawing.Point(12, 36);
+            this.hopeComboBox_Productos.Location = new System.Drawing.Point(12, 47);
             this.hopeComboBox_Productos.Name = "hopeComboBox_Productos";
             this.hopeComboBox_Productos.Size = new System.Drawing.Size(450, 36);
-            this.hopeComboBox_Productos.TabIndex = 0;
+            this.hopeComboBox_Productos.TabIndex = 6;
             // 
             // Editar
             // 
@@ -142,7 +142,7 @@
 
         private ReaLTaiizor.Forms.AirForm airForm1;
         private ReaLTaiizor.Controls.HopeTextBox hopeTextBox_NuevoPrecio;
-        private ReaLTaiizor.Controls.HopeComboBox hopeComboBox_Productos;
         private ReaLTaiizor.Controls.ParrotButton parrotButton_Ventas;
+        private ReaLTaiizor.Controls.HopeComboBox hopeComboBox_Productos;
     }
 }

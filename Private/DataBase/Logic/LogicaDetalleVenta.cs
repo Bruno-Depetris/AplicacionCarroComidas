@@ -183,6 +183,8 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
                                 string producto = reader["Productos"].ToString();
                                 string total = reader["Total"].ToString();
                                 string medio = reader["MedioPago"].ToString();
+                                foreach (string printer in PrinterSettings.InstalledPrinters)
+                                    Console.WriteLine(printer);
 
                                 string productos = reader["Productos"].ToString();
                                 string[] listaProductos = productos.Split('-'); 
@@ -222,11 +224,11 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
 
                                 if (File.Exists(Logo)) {
                                     PrintDocument pd = new PrintDocument();
-                                    pd.PrinterSettings.PrinterName = "XP-58"; 
+                                    pd.PrinterSettings.PrinterName = "TP582";
 
                                     pd.PrintPage += (sender, e) =>
                                     {
-                                        Font fuente = new Font("Lucida Console", 10);
+                                        Font fuente = new Font("Lucida Console", 10, FontStyle.Bold);
 
                                         float y = 2;
 
@@ -237,16 +239,17 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
                                         // Redimensionar la imagen
                                         Image resizedLogo = logoImg.GetThumbnailImage(logoWidth, logoHeight, null, IntPtr.Zero);
 
-                                        // Calcular la posición X para centrar la imagen en el ancho de la página
-                                        float x = (e.PageBounds.Width - resizedLogo.Width) / 2; // Centrado horizontalmente
+                                        // Centrar horizontalmente la imagen
+                                        float x = ( e.PageBounds.Width - resizedLogo.Width ) / 2;
 
-                                        // Dibuja el logo redimensionado
-                                        e.Graphics.DrawImage(resizedLogo, x, y); // Dibuja la imagen en las coordenadas calculadas
-                                        y += resizedLogo.Height + 10; // Ajusta el espacio después de la imagen
+                                        // Dibuja el logo
+                                        e.Graphics.DrawImage(resizedLogo, x, y);
+                                        y += resizedLogo.Height + 10;
 
-                                        // Dibuja el texto que contiene la comanda
+                                        // Dibuja el texto en negrita
                                         e.Graphics.DrawString(comanda, fuente, Brushes.Black, 0, y);
                                     };
+
 
                                     pd.Print();  
 

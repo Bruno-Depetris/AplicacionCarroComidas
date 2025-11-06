@@ -65,6 +65,42 @@ namespace AplicacionCarroComidas.Private.DataBase.Logic {
                 cn?.Close();
             }
         }
+
+
+        public bool EliminarComida(Comida comida) {
+            SQLiteConnection cn = null;
+            try {
+                cn = Conectar.ObtenerConexion();
+                string query = "DELETE FROM Comidas WHERE ComidaID = @id";
+                using (var cmd = new SQLiteCommand(query, cn)) {
+                    cmd.Parameters.AddWithValue("@id", comida.ComidaID);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            } catch (Exception ex) {
+                MessageBox.Show("Error al eliminar comida: " + ex.Message);
+                return false;
+            } finally {
+                cn?.Close();
+            }
+        }
+
+        public bool AgregarComida(Comida comida) {
+            SQLiteConnection cn = null;
+            try {
+                cn = Conectar.ObtenerConexion();
+                string query = "INSERT INTO Comidas (NombreComida, Precio) VALUES (@nombre, @precio)";
+                using (var cmd = new SQLiteCommand(query, cn)) {
+                    cmd.Parameters.AddWithValue("@nombre", comida.NombreComida);
+                    cmd.Parameters.AddWithValue("@precio", comida.Precio);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            } catch (Exception ex) {
+                MessageBox.Show("Error al agregar comida: " + ex.Message);
+                return false;
+            } finally {
+                cn?.Close();
+            }
+        }
     }
 
 
